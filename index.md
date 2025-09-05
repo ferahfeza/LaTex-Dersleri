@@ -8,7 +8,7 @@ Bu sayfada, mühendislik öğrencilerine yönelik hazırlanan LaTeX ders notlar�
 
 <ul>
   {% for page in site.pages %}
-    {% if page.name != "index.md" %}
+    {% if page.ext == ".md" and page.name != "index.md" %}
       <li>
         <a href="{{ page.url | relative_url }}">
           {{ page.name | replace: ".md", "" | replace: "_", " " }}
