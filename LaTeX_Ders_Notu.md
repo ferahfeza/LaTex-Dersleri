@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Mühendislik Öğrencileri için LaTeX Kursu Ders Notları
 
 **Platform:** [Overleaf.com](https://www.overleaf.com)
