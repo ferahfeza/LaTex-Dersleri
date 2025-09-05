@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="tr" data-bs-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LaTeX Ders Notları</title>
+  <meta name="description" content="LaTeX ders notları arşivi" />
+
+  <script>
+    // Sayfa yüklenmeden önce temayı ayarla (flicker'ı azaltır)
+    (() => {
+      try {
+        const stored = localStorage.getItem('theme'); // 'light' | 'dark' | 'auto'
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initial = stored === 'auto' || !stored ? (prefersDark ? 'dark' : 'light') : stored;
+        document.documentElement.setAttribute('data-bs-theme', initial);
+      } catch (_) {
+        document.documentElement.setAttribute('data-bs-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css">
+  <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+    :root, [data-bs-theme="light"] { color-scheme: light; }
+    [data-bs-theme="dark"] { color-scheme: dark; }
+    header .toolbar { gap: .5rem; }
+  </style>
+</head>
+<body class="bg-body-tertiary" data-page="index">
+  <main class="container py-4">
+    <header class="mb-4">
+      <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+        <div class="text-center text-md-start">
+          <h1 class="display-6 mb-1">LaTeX Ders Notları</h1>
+          <h2 class="h5 text-secondary mb-0">ferahfeza</h2>
+        </div>
+
+        <div class="toolbar d-flex align-items-center justify-content-center">
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              Tema
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+              <li><button type="button" class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="light">☀️ Açık</button></li>
+              <li><button type="button" class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="dark">🌙 Koyu</button></li>
+              <li><button type="button" class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="auto">🖥️ Sistem</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-secondary mt-3 mb-3 text-center text-md-start">
+        Arama yapabilir ve “Ders Notu” sütunundan dosyayı açabilirsiniz.
+      </p>
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          <input id="search" type="search" class="form-control" placeholder="Başlık, etiket veya kelime ara..." aria-label="Notlarda ara">
+        </div>
+      </div>
+    </header>
+
+    <section class="card shadow-sm">
+      <div class="card-body p-0">
+        <div id="loading" class="text-center text-secondary py-4">Yükleniyor…</div>
+        <div id="table-wrap" class="table-responsive" hidden>
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th style="min-width: 240px;">Ders Notu</th>
+                <th style="width: 140px;">Tarih</th>
+                <th style="min-width: 160px;">Etiketler</th>
+                <th>Özet</th>
+              </tr>
+            </thead>
+            <tbody id="list-body"></tbody>
+          </table>
+        </div>
+        <div id="empty" class="text-center text-secondary py-4" hidden>Sonuç bulunamadı.</div>
+      </div>
+    </section>
+
+    <footer class="text-center text-secondary mt-4">
+      <small>© <span id="year"></span> LaTeX Ders Notları</small>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/common.min.js"></script>
+  <script src="assets/site.js"></script>
+</body>
+</html>
