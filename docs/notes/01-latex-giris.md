@@ -11,6 +11,8 @@ Bu derste LaTeX’in temellerini, EEM (EE) öğrencileri için pratik örneklerl
 
 ## Hızlı Başlangıç: Minimal Belge İskeleti
 
+Bir formül $f(x)=ax+b$ şeklinde yazılabilir.
+
 ```latex
 \documentclass[a4paper,12pt]{article}
 
