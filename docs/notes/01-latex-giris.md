@@ -2,7 +2,7 @@
 
 Bu derste LaTeX’in temellerini, EEM (EE) öğrencileri için pratik örneklerle ele alıyoruz: denklem yazımı, birim gösterimi, devre çizimi, deney raporu şablonu, tablo ve grafikler, IEEE makale formatı ve kod listeleri.
 
-## Neden LaTeX?
+## Neden $LaTeX$?
 - Karmaşık denklemleri, SI birimlerini ve bilimsel sembolleri hatasız ifade eder.
 - Devre diyagramları (circuitikz), ölçüm tabloları (siunitx), Bode/IV grafikleri (pgfplots) ve profesyonel atıf/IEEE stilini (biblatex-ieee veya IEEEtran) destekler.
 - Büyük raporları/modüler projeleri düzenli tutar.
