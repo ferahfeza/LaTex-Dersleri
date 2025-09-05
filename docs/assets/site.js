@@ -76,20 +76,19 @@ function renderTable(filter = "") {
     $("#table-wrap").hidden = false;
   }
 
-  filtered
-    .sort((a,b) => (b.date || "").localeCompare(a.date || ""))
-    .forEach(item => {
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td>
-          <a class="fw-semibold link-body-emphasis text-decoration-none" href="ders.html?dosya=${encodeURIComponent(item.path)}">${item.title}</a>
-        </td>
-        <td class="text-nowrap">${item.date ? fmtDate(item.date) : ""}</td>
-        <td>${Array.isArray(item.tags) && item.tags.length ? item.tags.map(t => `<span class=\"badge text-bg-secondary me-1\">${t}</span>`).join("") : ""}</td>
-        <td class="text-secondary">${item.summary || ""}</td>
-      `;
-      tbody.appendChild(tr);
-    });
+  // lessons.json sırasını KORU: herhangi bir sıralama uygulama
+  filtered.forEach(item => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>
+        <a class="fw-semibold link-body-emphasis text-decoration-none" href="ders.html?dosya=${encodeURIComponent(item.path)}">${item.title}</a>
+      </td>
+      <td class="text-nowrap">${item.date ? fmtDate(item.date) : ""}</td>
+      <td>${Array.isArray(item.tags) && item.tags.length ? item.tags.map(t => `<span class="badge text-bg-secondary me-1">${t}</span>`).join("") : ""}</td>
+      <td class="text-secondary">${item.summary || ""}</td>
+    `;
+    tbody.appendChild(tr);
+  });
 }
 
 async function initIndex() {
