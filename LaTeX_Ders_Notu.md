@@ -1,5 +1,6 @@
 ---
 layout: default
+type: note
 ---
 
 # Mühendislik Öğrencileri için LaTeX Kursu Ders Notları
