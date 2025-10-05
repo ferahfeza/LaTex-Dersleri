@@ -80,3 +80,5 @@ Numara yerine harf veya Roma rakamları kullanmak için `enumerate` ortamında `
 ```
 Bu örnekte, `label=\alph*.` parametresi ile liste öğeleri küçük harflerle numaralandırılmıştır. Benzer şekilde, `\Alph*` büyük harfler, `\roman*` küçük Roma rakamları ve `\Roman*` büyük Roma rakamları için kullanılabilir.
 Listeleme ortamları, $\LaTeX$ dokümanlarında düzenli ve okunabilir içerik oluşturmak için oldukça kullanışlıdır. İhtiyaçlarınıza göre bu ortamları ve paketleri kullanarak listeleme işlemlerini kolayca gerçekleştirebilirsiniz.
+
+s
