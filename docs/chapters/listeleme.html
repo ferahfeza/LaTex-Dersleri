@@ -303,6 +303,19 @@ window.Quarto = {
 <h2 class="anchored">
 Paragraf ve Başlık Ayarları
 </h2>
+<p><span class="math inline">\(\LaTeX\)</span> dokümanlarında paragraf ve başlık ayarlarını özelleştirmek için çeşitli paketler ve komutlar bulunmaktadır. Aşağıda, bu ayarların nasıl yapılacağına dair örnekler verilmiştir:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">parskip</span>}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">parskip</span>}</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>Bu, paragraflar arasında boşluk bırakır ve paragraf başlarındaki girintileri kaldırır.</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">parskip</span>}</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu örnekte, <code>parskip</code> paketi kullanılarak paragraflar arasına boşluk eklenmiş ve paragraf başlarındaki girintiler kaldırılmıştır. Bu, özellikle akademik ve teknik dokümanlarda daha temiz bir görünüm sağlar. Benzer şekilde, <code>indentfirst</code> paketi kullanılarak dokümandaki ilk paragrafın da diğer paragraflar gibi girintili olması sağlanabilir. Aşağıda, <code>indentfirst</code> paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">indentfirst</span>}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Giriş}</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>Bu, ilk paragraftır.</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 

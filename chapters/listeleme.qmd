@@ -82,3 +82,21 @@ Bu örnekte, `label=\alph*.` parametresi ile liste öğeleri küçük harflerle 
 Listeleme ortamları, $\LaTeX$ dokümanlarında düzenli ve okunabilir içerik oluşturmak için oldukça kullanışlıdır. İhtiyaçlarınıza göre bu ortamları ve paketleri kullanarak listeleme işlemlerini kolayca gerçekleştirebilirsiniz.
 
 <h2>Paragraf ve Başlık Ayarları</h2> 
+
+$\LaTeX$ dokümanlarında paragraf ve başlık ayarlarını özelleştirmek için çeşitli paketler ve komutlar bulunmaktadır. Aşağıda, bu ayarların nasıl yapılacağına dair örnekler verilmiştir:
+```latex
+\usepackage{parskip}
+\begin{document}
+\begin{parskip}
+Bu, paragraflar arasında boşluk bırakır ve paragraf başlarındaki girintileri kaldırır.
+\end{parskip}
+\end{document}  
+```
+Bu örnekte, `parskip` paketi kullanılarak paragraflar arasına boşluk eklenmiş ve paragraf başlarındaki girintiler kaldırılmıştır. Bu, özellikle akademik ve teknik dokümanlarda daha temiz bir görünüm sağlar. Benzer şekilde, `indentfirst` paketi kullanılarak dokümandaki ilk paragrafın da diğer paragraflar gibi girintili olması sağlanabilir. Aşağıda, `indentfirst` paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:
+```latex
+\usepackage{indentfirst}
+\begin{document}
+\section{Giriş}
+Bu, ilk paragraftır.
+\end{document}
+```
