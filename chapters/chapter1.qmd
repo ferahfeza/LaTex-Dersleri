@@ -1,0 +1,118 @@
+---
+title: "Geometri Ayarları"
+---
+
+$\LaTeX$ ile doküman hazırlarken sayfa düzeni ve kenar boşlukları gibi geometrik ayarları yapmak için `geometry` paketini kullanabilirsiniz. Bu paket, sayfa boyutlarını, kenar boşluklarını ve diğer düzenleme seçeneklerini kolayca yapılandırmanıza olanak tanır. Aşağıda, `geometry` paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:
+
+```latex
+\usepackage[a4paper, margin=2cm]{geometry}
+```
+Yukarıdaki örnekte, `a4paper` seçeneği ile A4 boyutunda bir sayfa ayarlanmış ve `margin=2cm` seçeneği ile tüm kenar boşlukları 2 santimetre olarak belirlenmiştir. İhtiyaçlarınıza göre bu değerleri değiştirebilirsiniz.
+
+Üst, alt, iç ve dış kenar boşluklarını ayrı ayrı ayarlamak için aşağıdaki seçenekleri kullanabilirsiniz:
+- `top`: Üst kenar boşluğu.
+- `bottom`: Alt kenar boşluğu.
+- `left`: İç kenar boşluğu.
+- `right`: Dış kenar boşluğu.
+Örneğin:
+```latex
+\usepackage[top=1cm, bottom=1cm, left=1cm, right=1cm]{geometry}     
+```
+Bu komut, tüm kenar boşluklarını 1 santimetre olarak ayarlar. Bununla birlikte, `geometry` paketi birçok farklı seçenek sunar. Örneğin, sayfa boyutunu `letterpaper`, `legalpaper` gibi farklı formatlarda ayarlayabilir veya özel boyutlar belirleyebilirsiniz. Ayrıca, `landscape` seçeneği ile sayfayı yatay moda çevirebilirsiniz.
+```latex
+\usepackage[letterpaper, landscape]{geometry}   
+```
+Daha fazla bilgi ve seçenekler için `geometry` paketinin dokümantasyonuna [geometry package](https://ctan.org/pkg/geometry) adresinden ulaşabilirsiniz.
+
+<h2>Satır Aralığı Ayarları</h2>
+
+Satırlar arası boşlukları ayarlamak için `setspace` paketini kullanabilirsiniz. Bu paket, tek satır, 1.5 satır ve çift satır aralığı gibi farklı seçenekler sunar. Aşağıda, `setspace` paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:\usepackage{setspace}
+```latex
+\usepackage{setspace}
+```
+Bu paket
+yüklendikten sonra, dokümanınızın tamamında veya belirli bölümlerinde satır aralığını ayarlayabilirsiniz. Örneğin, tüm doküman için 1.5 satır aralığı ayarlamak için:
+```latex
+\setspace{1.5em}    
+```
+Veya sadece belirli bir bölüm için çift satır aralığı kullanmak isterseniz:
+```latex
+\begin{doublespace}
+Bu bölümde çift satır aralığı kullanılıyor.
+\end{doublespace}
+```
+Ayrıca, `singlespace` ve `onehalfspace` ortamlarını kullanarak tek satır ve 1.5 satır aralığını da uygulayabilirsiniz:
+```latex    
+\begin{singlespace}
+Bu bölümde tek satır aralığı kullanılıyor.
+\end{singlespace}
+\begin{onehalfspace}
+Bu bölümde 1.5 satır aralığı kullanılıyor.
+\end{onehalfspace}
+```
+Daha fazla bilgi ve seçenekler için `setspace` paketinin dokümantasyonuna [setspace package](https://ctan.org/pkg/setspace) adresinden ulaşabilirsiniz.
+
+<h2>Paragraf Ayarları</h2>
+Paragraf biçimlendirmesi için `parskip` ve `paralist` gibi paketleri kullanabilirsiniz. `parskip` paketi, paragraf başlarındaki girintileri kaldırır ve paragraflar arasına boşluk ekler. Aşağıda, `parskip` paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:
+
+```latex
+\usepackage{parskip}
+```
+
+Bu paket yüklendikten sonra, dokümanınızdaki tüm paragraflarda girintiler kaldırılır ve paragraflar arasında boşluk bırakılır. Bu, özellikle akademik ve teknik dokümanlarda daha temiz bir görünüm sağlar. Örneğin:
+
+```latex
+\documentclass{article}
+\usepackage{parskip}
+\begin{document}
+\begin{parskip} 
+Bu, paragraflar arasında boşluk bırakır ve paragraf başlarındaki girintileri kaldırır.
+\end{parskip}
+\end{document}  
+```
+
+`paralist` paketi ise, liste ortamlarını daha esnek hale getirir ve farklı liste stilleri oluşturmanıza olanak tanır. Aşağıda, `paralist` paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:
+
+```latex
+\usepackage{paralist}   
+```
+
+Bu paket yüklendikten sonra, `inparaenum`, `inparaitem` ve `inparadesc` gibi ortamları kullanarak liste öğelerini paragraf içinde sıralayabilirsiniz. Örneğin:
+
+```latex
+\begin{inparaenum}[(a)]
+\item Birinci madde,
+\item İkinci madde,
+\item Üçüncü madde.
+\end{inparaenum}
+```
+
+Dokümandaki ilk paragrafın girintili olması için `indentfirst` paketini kullanabilirsiniz. Bu paket, dokümandaki ilk paragrafın da diğer paragraflar gibi girintili olmasını sağlar. Aşağıda, `indentfirst` paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:
+
+```latex
+\usepackage{indentfirst}
+```
+
+Bu paket yüklendikten sonra, dokümanınızdaki tüm paragraflar, ilk paragraf dahil olmak üzere girintili olacaktır. Örneğin:
+
+```latex
+\documentclass{article}
+\usepackage{indentfirst}
+\begin{document}
+Bu, dokümandaki ilk paragraf ve girintili olacaktır.    
+\end{document}
+```
+
+<h2>Başlık ve Altbilgi Ayarları</h2>
+
+Sayfa başlıkları ve altbilgileri için `fancyhdr` paketini kullanabilirsiniz. Bu paket, sayfa üstü ve altı alanlarını özelleştirmenize olanak tanır. Örneğin:
+```latex
+\usepackage{fancyhdr}\pagestyle{fancy}
+\fancyhead[L]{Sol Başlık} % Sol üst başlık
+\fancyhead[C]{Orta Başlık} % Orta üst başlık
+\fancyhead[R]{Sağ Başlık} % Sağ üst başlık
+\fancyfoot[L]{Sol Alt Bilgi} % Sol alt bilgi
+\fancyfoot[C]{Orta Alt Bilgi} % Orta alt bilgi
+\fancyfoot[R]{Sağ Alt Bilgi} % Sağ alt bilgi
+```
+Bu paket yüklendikten sonra, sayfa başlıkları ve altbilgileri üzerinde tam kontrol sahibi olabilirsiniz. Daha fazla bilgi ve seçenekler için `fancyhdr` paketinin dokümantasyonuna [fancyhdr package](https://ctan.org/pkg/fancyhdr) adresinden ulaşabilirsiniz.

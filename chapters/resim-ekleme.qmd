@@ -1,0 +1,88 @@
+---
+title: "Resim Ekleme ve Ayarları"
+---
+
+$\LaTeX$ dokümanlarına resim eklemek için `graphicx` paketini kullanabilirsiniz. Bu paket, çeşitli resim formatlarını destekler ve resimlerin boyutlandırılması, döndürülmesi gibi işlemleri kolaylaştırır. Aşağıda, `graphicx` paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:
+```latex
+\usepackage{graphicx}
+```
+```latex
+\begin{document}
+\includegraphics[width=\textwidth]{resim.png}
+\end{document}  
+```
+Bu komutu dokümanınızın preamble (ön ayar) kısmına ekleyerek `graphicx` paketini yükleyebilirsiniz. Resmi eklemek için ise `\includegraphics` komutunu kullanabilirsiniz. Yukarıdaki örnekte, `width=\textwidth` parametresi ile resmin genişliğini sayfa genişliğine ayarladık. Resim dosyasının adı ve uzantısı `{resim.png}` kısmında belirtilmiştir.
+Resim eklerken dikkat etmeniz gereken bazı önemli noktalar şunlardır:
+- Resim dosyasının doküman ile aynı dizinde bulunması veya doğru bir yol belirtilmesi gerekir.
+- Desteklenen resim formatları arasında PNG, JPEG, PDF ve EPS bulunur.
+- Resim boyutlandırma için `width`, `height`, `scale` gibi parametreler kullanılabilir.
+- Resmi döndürmek için `angle` parametresi kullanılabilir, örneğin `angle=90` ile resmi 90 derece döndürebilirsiniz.
+- Resimlerin hizalanması için `center`, `flushleft`, `flushright` gibi ortamlar kullanılabilir.
+Aşağıda, bir resmin nasıl ekleneceğine dair tam bir örnek verilmiştir:
+
+```latex
+\begin{document}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{resim.png}
+\end{figure}
+\end{document}  
+```
+Bu örnekte, `figure` ortamı kullanılarak resim sayfa içinde ortalanmıştır. `h!` parametresi, resmin mümkün olan en yakın yere yerleştirilmesini sağlar. Resim ekleme işlemi bu şekilde gerçekleştirilir.
+
+Eklenen resimlere başlık eklemek ve referans vermek için `caption` ve `label` komutlarını kullanabilirsiniz. Aşağıda, bir resme başlık ekleme ve referans verme örneği verilmiştir:
+
+```latex
+\begin{document}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{resim.png}
+\caption{Bu bir resim başlığıdır.}
+\label{fig:resim}
+\end{figure}
+\end{document}
+```
+Bu örnekte, `\caption` komutu ile resme bir başlık eklendik ve `\label` komutu ile resme bir etiket verdik. Bu etiketi kullanarak dokümanın başka bir yerinde resme referans verebilirsiniz. Örneğin, `\ref{fig:resim}` komutu ile resmin numarasını dokümanın başka bir yerinde gösterebilirsiniz. `\ref{}` komutu, resmin numarasını otomatik olarak günceller, böylece resim ekleme veya silme işlemlerinde referanslarınız doğru kalır. Aşağıda, resme referans verme örneği verilmiştir:
+```latex
+Dokümanın başka bir yerinde resme referans vermek için:
+\ref{fig:resim}
+```
+Bu örnekte, `\ref{fig:resim}` komutu kullanılarak resmin numarası dokümanın başka bir yerinde gösterilmiştir. Bu sayede, resimlere kolayca referans verebilir ve dokümanınızın düzenini koruyabilirsiniz.
+<h2>Resim Ayarları ve Özelleştirme</h2>
+Resimlerin doküman içindeki konumunu ve görünümünü özelleştirmek için çeşitli ayarlar ve paketler kullanabilirsiniz. İşte bazı yaygın kullanılan ayarlar ve paketler:
+- **Boyutlandırma**: Resimlerin boyutlarını `width`, `height`, ve `scale` parametreleri ile ayarlayabilirsiniz. Örneğin, `width=0.5\textwidth` ile resmin genişliğini sayfa genişliğinin yarısı yapabilirsiniz.
+- **Döndürme**: Resimleri `angle` parametresi ile döndürebilirsiniz. Örneğin, `angle=45` ile resmi 45 derece döndürebilirsiniz.
+- **Hizalama**: Resimleri `center`, `flushleft`, ve `flushright` ortamları ile hizalayabilirsiniz. Örneğin, `\begin{center} ... \end{center}` ile resmi ortalayabilirsiniz.
+- **Çerçeve Ekleme**: Resimlere çerçeve eklemek için `fancybox` paketini kullanabilirsiniz. Bu paket, resimlerin etrafına çeşitli stillerde çerçeveler eklemenizi sağlar. Aşağıda, `fancybox` paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:
+```latex
+\usepackage{fancybox}
+\begin{document}
+\begin{figure}[h!]
+\centering
+\fancybox{
+\includegraphics[width=\textwidth]{resim.png}
+}
+\end{figure}    
+\end{document}
+```
+Bu komutu dokümanınızın preamble (ön ayar) kısmına ekleyerek `fancybox` paketini yükleyebilirsiniz. Resmi çerçeve içine almak için ise `\fancybox{...}` komutunu kullanabilirsiniz. Yukarıdaki örnekte, resim çerçeve içine alınmıştır.
+<h2>Diğer Faydalı Paketler</h2>
+Resimlerle çalışırken kullanabileceğiniz bazı diğer faydalı paketler şunlardır:
+
+- **subcaption**: Birden fazla resmi yan yana veya alt alta yerleştirmek için kullanılır. Her resme ayrı başlık ekleyebilirsiniz.
+- **subcaption**: Birden fazla resmi yan yana veya alt alta yerleştirmek için kullanılır. Her resme ayrı başlık ekleyebilirsiniz.
+- **wrapfig**: Metin etrafında resimlerin sarılmasını sağlar.
+- **float**: Resimlerin konumlandırılmasını daha hassas kontrol etmenizi sağlar. `H` parametresi ile resmi tam olarak istediğiniz yere yerleştirebilirsiniz. Örneğin:
+  
+```latex
+\begin{document}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{resim.png}
+\end{figure}
+\end{document}
+```
+Bu komutu dokümanınızın preamble (ön ayar) kısmına ekleyerek `float` paketini yükleyebilirsiniz. Resmi tam olarak istediğiniz yere yerleştirmek için ise `H` parametresini kullanabilirsiniz. Yukarıdaki örnekte, resim tam olarak belirtilen konuma yerleştirilmiştir.
+- **adjustbox**: Resimlerin boyutlandırılması, döndürülmesi ve diğer ayarlarını daha esnek bir şekilde yapmanızı sağlar.
+- **tikz**: Vektör tabanlı grafikler ve diyagramlar oluşturmak için güçlü bir araçtır.
+Bu paketler ve ayarlar, $\LaTeX$ dokümanlarınıza resim eklerken size büyük esneklik ve kontrol sağlar. İhtiyaçlarınıza göre bu paketleri kullanarak resimlerinizi istediğiniz şekilde düzenleyebilirsiniz.

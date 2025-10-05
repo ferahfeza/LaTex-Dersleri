@@ -1,0 +1,29 @@
+---
+title: "Ana Sayfa"
+---
+
+$\LaTeX$ teknik dokümanlar hazırlamada sıklıkla kullanılan bir sistemidir. Leslie Lamport tarafından geliştirilmiş olup, özellikle akademik ve bilimsel dokümanların hazırlanmasında yaygın olarak kullanılmaktadır.
+
+$\LaTeX$'de kullanılan belge sınıflarını şöyle sıralayabiliriz:
+
+- **article**: Makale türündeki belgeler için kullanılır.
+- **report**: Daha uzun belgeler ve raporlar için uygundur.
+- **book**: Kitap formatındaki belgeler için kullanılır.
+- **letter**: Mektup yazmak için özel bir sınıftır.
+- **beamer**: Sunumlar hazırlamak için kullanılır.
+- **slides**: Basit sunumlar için kullanılır.
+
+$\LaTeX$'in sunduğu bu belge sınıfları, kullanıcıların ihtiyaçlarına göre farklı formatlarda dokümanlar oluşturmasına olanak tanır. Her sınıf, belirli bir türdeki belge için optimize edilmiştir ve farklı özellikler sunar.
+
+$\LaTeX$'in sunduğu avantajlar ve Word gibi kelime işlemcilere göre avantajları şunlardır:
+
+- **Yüksek Kalite**: $\LaTeX$, özellikle matematiksel ifadeler ve bilimsel notasyonlar için yüksek kaliteli çıktı sağlar.
+- **Otomatik Biçimlendirme**: Belge yapısını otomatik olarak yönetir, bu da kullanıcıların biçimlendirme ile uğraşmadan içeriğe odaklanmasını sağlar.
+- **Referans Yönetimi**: Bibliyografya ve atıf yönetimi konusunda güçlü araçlar sunar.
+- **Esneklik ve Özelleştirme**: Kullanıcılar, paketler ve makrolar aracılığıyla belgelerini özelleştirebilirler.
+- **Açık Kaynak**: $\LaTeX$ ücretsizdir ve geniş bir kullanıcı topluluğu tarafından desteklenir.
+- **Uzun Belgeler İçin İdeal**: Kitaplar, tezler ve raporlar gibi uzun belgeler için mükemmeldir.
+- **Platform Bağımsızlığı**: $\LaTeX$ her türlü işletim sisteminde çalışabilir.
+- **Sürüm Kontrolü ile Uyumlu**: Metin tabanlı yapısı, sürüm kontrol sistemleriyle kolayca entegre olmasını sağlar.
+- **Profesyonel Görünüm**: $\LaTeX$ ile hazırlanan belgeler genellikle daha profesyonel ve düzenli görünür.
+- **Matematiksel İfadeler**: $\LaTeX$, karmaşık matematiksel ifadeleri kolayca yazmayı sağlar.

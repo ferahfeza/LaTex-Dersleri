@@ -1,0 +1,82 @@
+---
+title: "Listeleme ve Madde İşaretleri"
+---
+
+$\LaTeX$ dokümanlarında listeleme yapmak için `itemize`, `enumerate` ve `description` gibi ortamları kullanabilirsiniz. Bu ortamlar, madde işaretli listeler, numaralandırılmış listeler ve tanımlama listeleri oluşturmanıza olanak tanır. Aşağıda, bu ortamların nasıl kullanılacağına dair örnekler verilmiştir:
+
+```latex
+\begin{itemize}
+  \item Madde 1
+  \item Madde 2
+  \item Madde 3
+\end{itemize}
+
+```latex
+\begin{enumerate}
+  \item Birinci
+  \item İkinci
+  \item Üçüncü
+\end{enumerate}
+
+```latex
+\begin{description}
+  \item[Öğe 1] Açıklama 1
+  \item[Öğe 2] Açıklama 2
+  \item[Öğe 3] Açıklama 3
+\end{description}
+```
+
+Bu örneklerde görüldüğü gibi, `itemize` ortamı madde işaretli listeler oluştururken, `enumerate` ortamı numaralandırılmış listeler oluşturur. `description` ortamı ise her öğe için bir başlık ve açıklama sağlar.
+Ayrıca, liste öğelerini iç içe kullanarak daha karmaşık yapılar oluşturabilirsiniz. Örneğin:
+
+```latex
+\begin{itemize}
+  \item Madde 1
+  \begin{itemize}
+    \item Alt madde 1
+    \item Alt madde 2
+  \end{itemize}
+  \item Madde 2
+  \item Madde 3
+\end{itemize}
+```
+Bu örnekte, `itemize` ortamı içinde başka bir `itemize` ortamı kullanarak alt maddeler oluşturduk. Benzer şekilde, `enumerate` ve `description` ortamları da iç içe kullanılabilir.
+Listeleme ortamlarının görünümünü özelleştirmek için çeşitli paketler de mevcuttur. Örneğin, `enumitem` paketi, liste ortamlarının etiketlerini, boşluklarını ve diğer özelliklerini özelleştirmenize olanak tanır. Aşağıda, `enumitem` paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:
+
+```latex
+\usepackage{enumitem}
+\begin{document}
+\begin{itemize}[label=\textbullet, leftmargin=*]
+  \item Madde 1
+  \item Madde 2
+  \item Madde 3
+\end{itemize}
+\end{document}
+```
+
+Bu komutu dokümanınızın preamble (ön ayar) kısmına ekleyerek `enumitem` paketini yükleyebilirsiniz. `label` parametresi ile madde işaretlerini özelleştirebilir ve `leftmargin` parametresi ile liste kenar boşluklarını ayarlayabilirsiniz. Yukarıdaki örnekte, madde işaretleri olarak dolu yuvarlak (`\textbullet`) kullanılmış ve kenar boşlukları kaldırılmıştır. Ayrıca, `paralist` paketi de listeleme ortamlarını daha esnek hale getirir ve farklı liste stilleri oluşturmanıza olanak tanır. Aşağıda, `paralist` paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:
+
+```latex
+\usepackage{paralist}
+\begin{document}
+\begin{compactitem}
+  \item Madde 1
+  \item Madde 2
+  \item Madde 3
+\end{compactitem}
+\end{document}
+```
+
+Numara yerine harf veya Roma rakamları kullanmak için `enumerate` ortamında `enumitem` paketini kullanabilirsiniz. Örneğin:
+```latex
+\usepackage{enumitem}
+\begin{document}
+\begin{enumerate}[label=\alph*.]
+  \item Birinci
+  \item İkinci
+  \item Üçüncü
+\end{enumerate}
+\end{document}
+```
+Bu örnekte, `label=\alph*.` parametresi ile liste öğeleri küçük harflerle numaralandırılmıştır. Benzer şekilde, `\Alph*` büyük harfler, `\roman*` küçük Roma rakamları ve `\Roman*` büyük Roma rakamları için kullanılabilir.
+Listeleme ortamları, $\LaTeX$ dokümanlarında düzenli ve okunabilir içerik oluşturmak için oldukça kullanışlıdır. İhtiyaçlarınıza göre bu ortamları ve paketleri kullanarak listeleme işlemlerini kolayca gerçekleştirebilirsiniz.

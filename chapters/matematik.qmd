@@ -1,0 +1,84 @@
+---
+title: "Formül ve Denklemler"
+---
+
+$\LaTeX$ dokümanlarında formül ve denklemler oluşturmak için çeşitli yöntemler bulunmaktadır. Aşağıda, bu yöntemlerin nasıl kullanılacağına dair örnekler verilmiştir:
+
+```latex
+\begin{equation}
+F=\dfrac{dp}{dt}
+\end{equation}
+
+```latex
+\begin{align}
+a^2 + b^2 &= c^2 \\
+\int_0^1 x^2 \, dx &= \frac{1}{3}
+\end{align}
+
+```latex
+\begin{gather}
+x + y = z \\
+x - y = w
+\end{gather}
+```
+
+Bu örneklerde görüldüğü gibi, `equation` ortamı tek bir denklemi numaralandırarak yazarken, `align` ortamı birden fazla denklemi hizalı bir şekilde yazmanıza olanak tanır. `gather` ortamı ise birden fazla denklemi merkezde hizalayarak yazmanıza olanak tanır.
+Ayrıca, formül ve denklemleri iç içe kullanarak daha karmaşık yapılar oluşturabilirsiniz. Örneğin:
+
+```latex
+\begin{equation}
+\begin{aligned}
+E &= mc^2 \\
+F &= ma
+\end{aligned}
+\end{equation}
+```
+Bu örnekte, `aligned` ortamı içinde birden fazla denklemi hizalı bir şekilde yazdık. Benzer şekilde, `align` ve `gather` ortamları da iç içe kullanılabilir.
+Formül ve denklemlerin görünümünü özelleştirmek için çeşitli paketler de mevcuttur. Örneğin, `amsmath` paketi, formül ve denklemlerin düzenini ve numaralandırılmasını özelleştirmenize olanak tanır. Aşağıda, `amsmath` paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:
+
+```latex
+\usepackage{amsmath}
+\begin{document}
+\begin{equation}
+E = mc^2
+\end{equation}
+\end{document}
+```
+
+Bu komutu dokümanınızın preamble (ön ayar) kısmına ekleyerek `amsmath` paketini yükleyebilirsiniz. `align` ve `gather` ortamları gibi daha fazla özellikten yararlanabilirsiniz. Yukarıdaki örnekte, `equation` ortamı içinde bir denklemi yazdık.
+Formül ve denklemleri yazarken, matematiksel sembollerin doğru bir şekilde görüntülenmesi için `math` modunu kullanmalısınız. Örneğin:
+
+```latex
+\begin{document}
+\begin{equation}
+E = mc^2
+\end{equation}
+\end{document}
+```
+Bu örnekte, `equation` ortamı içinde bir denklemi yazdık. Benzer şekilde, `align` ve `gather` ortamları da kullanılabilir.
+Formül ve denklemler, $\LaTeX$ dokümanlarında düzenli ve okunabilir içerik oluşturmak için oldukça kullanışlıdır. İhtiyaçlarınıza göre bu ortamları ve paketleri kullanarak formül ve denklemleri kolayca gerçekleştirebilirsiniz.
+
+Satır içi formüller için `$...$` veya `\(...\)` kullanabilirsiniz. Örneğin, $F=\dfrac{dp}{dt}$ veya \(F=\dfrac{dp}{dt}\) şeklinde yazabilirsiniz.
+
+<h2>Ana Semboller ve Operatörler</h2>
+Matematiksel ifadelerde sıkça kullanılan bazı semboller ve operatörler şunlardır:
+
+- Toplama: `+`
+- Çıkarma: `-`
+- Çarpma: `*`
+- Bölme: `/`
+- Eşittir: `=`
+- Yaklaşık eşittir: `\approx`
+- Denklem: `\equiv`
+- Sonsuzluk: `\infty`
+- Karekök: `\sqrt{}`
+- Üs: `{}^`
+- Alt simge: `{}_`
+- Kesir: `\frac{}{}` veya `\dfrac{}{}` (daha büyük kesirler için)
+- Limit: `\lim_{x \to a}`
+- Toplam: `\sum_{i=1}^{n}`
+- İntegral: `\int_{a}^{b}`
+- Parantezler: `()`, `[]`, `{}`, `\left( \right)`, `\left[ \right]`, `\left\{ \right\}`
+- Yunan harfleri: `\alpha`, `\beta`, `\gamma`, `\delta`, `\epsilon`, `\zeta`, `\eta`, `\theta`, `\iota`, `\kappa`, `\lambda`, `\mu`, `\nu`, `\xi`, `\pi`, `\rho`, `\sigma`, `\tau`, `\upsilon`, `\phi`, `\chi`, `\psi`, `\omega`
+
+Daha fazla bilgi ve seçenekler için `amsmath` paketinin dokümantasyonuna [amsmath package](https://ctan.org/pkg/amsmath) adresinden ulaşabilirsiniz.

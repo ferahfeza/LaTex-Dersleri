@@ -1,0 +1,47 @@
+---
+title: "Tablo Oluşturma"
+---
+
+$\LaTeX$ dokümanlarında tablo oluşturmak için çeşitli yöntemler bulunmaktadır. Aşağıda, bu yöntemlerin nasıl kullanılacağına dair örnekler verilmiştir:
+
+```latex
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Başlık 1 & Başlık 2 & Başlık 3 \\
+\hline
+Veri 1  & Veri 2  & Veri 3  \\
+Veri 4  & Veri 5  & Veri 6  \\
+\hline
+\end{tabular}
+\caption{Örnek Tablo}
+\label{tab:ornek}
+\end{table}
+```
+
+Bu örnekte, `table` ortamı içinde bir tablo oluşturduk. `tabular` ortamı, tablonun yapısını belirler ve sütunların hizalanmasını sağlar. `|c|c|c|` ifadesi, üç sütun olduğunu ve her birinin ortalanacağını belirtir. `\hline` komutu, yatay çizgiler ekler. `\caption` komutu tabloya bir başlık ekler ve `\label` komutu tabloya bir etiket verir, böylece dokümanın başka bir yerinde tabloya referans verebilirsiniz. Aşağıda, tabloya referans verme örneği verilmiştir:
+```latex
+Dokümanın başka bir yerinde tabloya referans vermek için:
+\ref{tab:ornek} 
+```
+Bu örnekte, `\ref{tab:ornek}` komutu kullanılarak tablonun numarası dokümanın başka bir yerinde gösterilmiştir. Bu sayede, tablolara kolayca referans verebilir ve dokümanınızın düzenini koruyabilirsiniz. Ayrıca, tablonun görünümünü özelleştirmek için çeşitli paketler de mevcuttur. Örneğin, `booktabs` paketi, daha profesyonel görünümlü tablolar oluşturmanıza olanak tanır. Aşağıda, `booktabs` paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:\usepackage{booktabs}
+```latex
+\usepackage{booktabs}   
+\begin{document}
+\begin{table}[h]
+\centering
+\begin{tabular}{c c c}
+\hline
+Başlık 1 & Başlık 2 & Başlık 3 \\
+\hline
+Veri 1  & Veri 2  & Veri 3  \\
+Veri 4  & Veri 5  & Veri 6  \\
+\hline
+\end{tabular}
+\caption{Örnek Tablo}
+\label{tab:ornek}
+\end{table}
+\end{document}
+```
+Bu komutu dokümanınızın preamble (ön ayar) kısmına ekleyerek `booktabs` paketini yükledik. `booktabs` paketi, `\toprule`, `\midrule` ve `\bottomrule` gibi komutlar sağlar, böylece tablolarınızın çizgilerini daha estetik hale getirebilirsiniz. Yukarıdaki örnekte, `\hline` komutları yerine `booktabs` komutlarını kullanarak daha profesyonel görünümlü bir tablo oluşturabilirsiniz.

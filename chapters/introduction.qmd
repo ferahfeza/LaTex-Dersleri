@@ -1,0 +1,46 @@
+---
+title: "LaTeX'de Türkçe Belgeleme"
+---
+
+ $\LaTeX$ ile Türkçe doküman hazırlamak için bazı özel ayarlar ve paketler kullanmak gerekmektedir. Bu bölümde, LaTeX'te Türkçe karakterlerin doğru görüntülenmesi ve yazım kurallarına uygun dokümanlar oluşturulması için gerekli adımları inceleyeceğiz.
+
+ <h2>turkish babel paketi</h2>
+
+ LaTeX'te Türkçe karakterlerin doğru bir şekilde işlenmesi için `babel` paketini kullanmak önemlidir. Bu paket, Türkçe diline özgü karakterlerin ve yazım kurallarının doğru uygulanmasını sağlar. Aşağıda, `babel` paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:
+
+ ```latex
+ \usepackage[turkish]{babel}
+ ```
+
+Bu komutu dokümanınızın preamble (ön ayar) kısmına ekleyerek Türkçe karakterlerin doğru bir şekilde işlenmesini sağlayabilirsiniz. Ancak komutun opsiyonlarında birtakım eklemeler yapılması gerekmektedir. Bunun için kodu aşağıdaki gibi düzenlemeliyiz.
+
+```latex
+\usepackage[turkish, shorthands=:!]{babel}
+```
+Türkçe olarak makale (article) sınıfında bir doküman oluşturmak için aşağıdaki örneği inceleyebilirsiniz:
+
+```latex
+\documentclass{article}
+\usepackage[turkish, shorthands=:!]{babel}
+\title{\LaTeX{} ile Türkçe Makale Hazırlama}
+\author{Ali İhsan ÇANAKOĞLU}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{abstract}
+Bu makalede, \LaTeX{} ile Türkçe doküman hazırlamanın temel adımları ve ipuçları ele alınmıştır.
+\end{abstract}
+\section{Giriş}
+Makalenizin giriş kısmı buraya gelecek.
+\end{document}
+```
+Yukarıdaki örnekte, `babel` paketinin `turkish` ve `shorthands=:!` seçenekleri ile yüklendiğine dikkat edin. Bu ayarlar, Türkçe karakterlerin doğru bir şekilde işlenmesini sağlar. Ayrıca, makalenin başlığı, yazarı ve tarihi gibi temel bilgileri de ekledik.
+
+Bu stil henüz fi birleşik harfini (ligature) düzgün şekilde ele almamaktadır. Elle f{}i veya f{\kern0pt}i yazarak bu sorunu çözebilirsiniz, ancak bunu otomatik olarak yapmak da mümkündür. pdfTEX ve tek dilli belgelerde, örneğin microtype paketini kullanabilirsiniz:
+```latex
+\usepackage{microtype}
+\DisableLigatures[f]{encoding = *, family = *}
+```
+Daha fazla bilgi için CTAN'daki Türkçe babel paketinin dokümanına [turkish babel](https://mirrors.neterra.net/CTAN/macros/latex/contrib/babel-contrib/turkish/turkish.pdf) bakabilirsiniz.
+
+Bu temel ayarlarla, LaTeX'te Türkçe dokümanlar hazırlamaya başlayabilirsiniz. İlerleyen bölümlerde, daha gelişmiş özellikler ve ipuçları üzerinde duracağız.

@@ -1,0 +1,23 @@
+{
+  "index.qmd": {
+    "index.html": "31e37caf"
+  },
+  "chapters/introduction.qmd": {
+    "introduction.html": "847a68b0"
+  },
+  "chapters/chapter1.qmd": {
+    "chapter1.html": "c2a4782c"
+  },
+  "chapters/resim-ekleme.qmd": {
+    "resim-ekleme.html": "f316780c"
+  },
+  "chapters/listeleme.qmd": {
+    "listeleme.html": "fc049d9c"
+  },
+  "chapters/matematik.qmd": {
+    "matematik.html": "30d0117f"
+  },
+  "chapters/tablolama.qmd": {
+    "tablolama.html": "cbb3083d"
+  }
+}
