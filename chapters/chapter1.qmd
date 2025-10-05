@@ -116,3 +116,4 @@ Sayfa başlıkları ve altbilgileri için `fancyhdr` paketini kullanabilirsiniz.
 \fancyfoot[R]{Sağ Alt Bilgi} % Sağ alt bilgi
 ```
 Bu paket yüklendikten sonra, sayfa başlıkları ve altbilgileri üzerinde tam kontrol sahibi olabilirsiniz. Daha fazla bilgi ve seçenekler için `fancyhdr` paketinin dokümantasyonuna [fancyhdr package](https://ctan.org/pkg/fancyhdr) adresinden ulaşabilirsiniz.
+
