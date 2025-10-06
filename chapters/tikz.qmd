@@ -139,4 +139,10 @@ Tikz ortamında çizim yaparken babel paketini kullanıyorsanız, `\usetikzlibra
 ```
 Bu örnekte, `\usetikzlibrary{babel}` komutu ile Tikz'in Türkçe karakterlerle uyumlu çalışması sağlanmıştır. Böylece, çizimlerde Türkçe karakterler sorunsuz bir şekilde kullanılabilir.
 
+Bu örnekte, `\usetikzlibrary{babel}` komutu ile Tikz'in Türkçe karakterlerle uyumlu çalışması sağlanmıştır. Böylece, çizimlerde Türkçe karakterler sorunsuz bir şekilde kullanılabilir.
+
 Daha fazla bilgi ve örnekler için Tikz paketinin dokümantasyonuna [TikZ & PGF Manual](https://ctan.org/pkg/pgf) adresinden ulaşabilirsiniz.
+
+---
+**TikZ örneklerinin PDF çıktısını indirmek için:**
+[PDF olarak indir](../Tikz-kod/tikz_ornekleri.pdf)
