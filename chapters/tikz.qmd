@@ -11,6 +11,9 @@ $\LaTeX$ dokümanlarında çizim yapmak için TikZ paketi kullanılabilir. Aşa�
 \draw (0,0) -- (1,1);
 \end{tikzpicture}
 \end{document}
+---
+**TikZ örneklerinin PDF çıktısını indirmek için:**
+[PDF olarak indir](../Tikz-kod/tikz_ornekleri.pdf)
 ```
 Tikz ile çizim yapmada `standalone` sınıfını kullanmak uygundur. Aşağıda, `standalone` sınıfı ile TikZ çizimi yapmanın örneği verilmiştir:
 ```latex
