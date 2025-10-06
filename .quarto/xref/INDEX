@@ -19,5 +19,8 @@
   },
   "chapters/tablolama.qmd": {
     "tablolama.html": "cbb3083d"
+  },
+  "chapters/tikz.qmd": {
+    "tikz.html": "6e1a9f46"
   }
 }

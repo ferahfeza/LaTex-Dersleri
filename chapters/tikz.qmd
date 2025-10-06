@@ -1,0 +1,139 @@
+---
+title: "Tikz ile Çizim"
+---
+
+$\LaTeX$ dokümanlarında çizim yapmak için TikZ paketi kullanılabilir. Aşağıda, TikZ ile basit bir çizim yapmanın örneği verilmiştir:
+
+```latex
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+\draw (0,0) -- (1,1);
+\end{tikzpicture}
+\end{document}
+```
+Tikz ile çizim yapmada `standalone` sınıfını kullanmak uygundur. Aşağıda, `standalone` sınıfı ile TikZ çizimi yapmanın örneği verilmiştir:
+```latex
+\documentclass[tikz,border=10pt]{standalone}
+\begin{document}
+\begin{tikzpicture}
+\draw (0,0) -- (1,1);
+\end{tikzpicture}
+\end{document}
+```
+<h2>`draw` Komutu</h2>
+`draw` komutu, TikZ ile çizim yaparken en temel komutlardan biridir. Bu komut, çizgiler, şekiller ve yollar çizmek için kullanılır. Aşağıda, `draw` komutunun nasıl kullanılacağına dair bazı örnekler verilmiştir:
+
+```latex
+\begin{tikzpicture}
+\draw (0,0) -- (2,2); % İki nokta arasında düz bir çizgi çizer
+\draw (0,0) rectangle (2,1); % Dikdörtgen çizer
+\draw (1,1) circle (1cm); % Yarıçapı 1 cm olan bir daire çizer
+\draw (0,0) -- (1,2) -- (2,0); % Çokgen çizer
+\end{tikzpicture}   
+```
+
+Tikz çizim birimi olarak santimetre (cm) kullanılır. Örneğin, bir çizgi çizerken koordinatları santimetre cinsinden belirtebilirsiniz:
+```latex
+\begin{tikzpicture}
+\draw (0,0) -- (2,0); % 2 cm uzunluğunda bir yatay çizgi çizer
+\end{tikzpicture}
+```
+Ayrıca, `draw` komutuyla çizilen şekillerin renklerini ve kalınlıklarını da ayarlayabilirsiniz. Örneğin:
+```latex
+\begin{tikzpicture}
+\draw[red, thick] (0,0) -- (2,2); % Kırmızı ve kalın bir çizgi çizer
+\draw[blue, dashed] (0,0) rectangle (2,1); % Mavi ve kesikli bir dikdörtgen çizer
+\draw[green, fill=yellow] (1,1) circle (1cm); % Yeşil ve sarı bir daire çizer
+\end{tikzpicture}
+```
+Tikz ile oklar çizmek için `->` sembolünü kullanabilirsiniz. Örneğin:
+```latex
+\begin{tikzpicture}
+\draw (0,0) -> (2,2); % Başında ok olan bir çizgi çizer
+\draw[->] (0,0) -- (2,0); % Başında ok olan yatay bir çizgi çizer
+\end{tikzpicture}
+```
+Daha karmaşık şekiller ve yollar çizmek için `to`, `arc`, `bend`, `cycle` gibi ek komutlar da kullanılabilir. Örneğin:
+```latex
+\begin{tikzpicture}
+\draw (0,0) to (2,2); % İki nokta arasında düz bir çizgi çizer
+\draw (0,0) arc (0:180:1cm); % Yarıçapı 1 cm olan bir yay çizer
+\draw (0,0) -- (1,2) -- (2,0) -- cycle; % Çokgen çizer ve kapatır
+\end{tikzpicture}   
+```
+<h2>`node` Komutu</h2>
+`node` komutu, TikZ ile çizim yaparken metin kutuları veya etiketler eklemek için kullanılır. Bu komut, belirli bir konuma metin yerleştirmek için oldukça kullanışlıdır. Aşağıda, `node` komutunun nasıl kullanılacağına dair bazı örnekler verilmiştir:
+
+```latex
+\begin{tikzpicture}
+\draw (0,0) -- (1,1) node[midway, above] {A};
+\draw (1,0) -- (0,1) node[midway, below] {B};
+\end{tikzpicture}   
+```
+Bu örnekte, `node` komutu ile çizgi ortasına "A" ve "B" etiketleri eklenmiştir. `midway` parametresi, etiketin çizgi ortasına yerleştirilmesini sağlar. `above` ve `below` parametreleri ise etiketin çizginin üstünde veya altında konumlandırılmasını sağlar.
+
+<h2>`coordinate` Komutu</h2>
+`coordinate` komutu, TikZ ile çizim yaparken belirli bir koordinat noktasını tanımlamak için kullanılır. Bu komut, çizimlerde referans noktaları oluşturmak için oldukça faydalıdır. Aşağıda, `coordinate` komutunun nasıl kullanılacağına dair bazı örnekler verilmiştir:
+
+```latex
+\begin{tikzpicture}
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,1);
+\draw (A) -- (B);
+\end{tikzpicture}
+```
+Bu örnekte, `coordinate` komutu ile "A" ve "B" adlı iki koordinat noktası tanımlanmış ve bu noktalar arasında bir çizgi çizilmiştir. `at` parametresi, koordinatın konumunu belirler.
+
+<h2>`path` Komutu</h2>
+`path` komutu, TikZ ile çizim yaparken bir yol (path) tanımlamak için kullanılır. Bu komut, birden fazla çizgi ve şekli bir arada tanımlamak için oldukça kullanışlıdır. Aşağıda, `path` komutunun nasıl kullanılacağına dair bazı örnekler verilmiştir:
+
+```latex
+\begin{tikzpicture}
+\path (0,0) -- (1,1) -- (2,0);
+\draw (0,0) -- (1,1) -- (2,0);
+\end{tikzpicture}
+```
+Bu örnekte, `path` komutu ile bir yol tanımlanmış ve ardından `draw` komutu ile bu yol çizilmiştir. `path` komutu, karmaşık şekiller ve yollar oluşturmak için kullanılabilir.
+
+<h2>`fill` Komutu</h2>
+`fill` komutu, TikZ ile çizim yaparken kapalı şekilleri doldurmak için kullanılır. Bu komut, belirli bir alanı renk veya desen ile doldurmak için oldukça faydalıdır. Aşağıda, `fill` komutunun nasıl kullanılacağına dair bazı örnekler verilmiştir:
+```latex
+\begin{tikzpicture}
+\fill[red] (0,0) rectangle (2,1); % Kırmızı bir dikdörtgen doldurur
+\fill[blue] (1,1) circle (1cm); % Mavi bir daire doldurur
+\end{tikzpicture}
+```
+Bu örnekte, `fill` komutu ile kırmızı bir dikdörtgen ve mavi bir daire doldurulmuştur. `fill` komutu, kapalı şekillerin içini renklendirmek için kullanılır ve `draw` komutu ile birlikte kullanılabilir.
+
+<h2>`clip` Komutu</h2>
+`clip` komutu, TikZ ile çizim yaparken belirli bir alanı kesmek için kullanılır. Bu komut, genellikle karmaşık şekillerin içini doldurmak veya belirli bir alanı vurgulamak için kullanılır. Aşağıda, `clip` komutunun nasıl kullanılacağına dair bazı örnekler verilmiştir:
+
+```latex
+\begin{tikzpicture}
+\fill[red] (0,0) rectangle (2,1);
+\begin{scope}
+\clip (1,0) circle (1cm);
+\fill[blue] (0,0) rectangle (2,1);
+\end{scope}
+\end{tikzpicture}
+```
+Bu örnekte, `clip` komutu ile mavi dolgu yalnızca kırmızı dikdörtgenin içindeki daire alanında görünür. `scope` ortamı, kesme işlemini sınırlamak için kullanılır. Bu örnekte, `clip` komutunun nasıl çalıştığını ve belirli bir alanı nasıl kesebileceğinizi göstermektedir.
+
+Tikz ortamında çizim yaparken babel paketini kullanıyorsanız, `\usetikzlibrary{babel}` komutunu preamble kısmına eklemeniz önerilir. Bu, Tikz'in Türkçe karakterlerle uyumlu çalışmasını sağlar. Örneğin:
+
+```latex
+\documentclass{article}
+\usepackage[turkish, shorthands=:!]{babel}
+\usepackage{tikz}  
+\usetikzlibrary{babel}
+\begin{document} 
+\begin{document}
+\begin{tikzpicture}
+\draw (0,0) -- (1,1) node[midway, above] {Çizim Örneği};
+\end{tikzpicture}
+\end{document}
+```
+Bu örnekte, `\usetikzlibrary{babel}` komutu ile Tikz'in Türkçe karakterlerle uyumlu çalışması sağlanmıştır. Böylece, çizimlerde Türkçe karakterler sorunsuz bir şekilde kullanılabilir.
+
+Daha fazla bilgi ve örnekler için Tikz paketinin dokümantasyonuna [TikZ & PGF Manual](https://ctan.org/pkg/pgf) adresinden ulaşabilirsiniz.

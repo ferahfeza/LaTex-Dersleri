@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>LaTeX Konuları – 4&nbsp; Resim Ekleme ve Ayarları</title>
+<title>LaTeX Konuları – 8&nbsp; Tikz ile Çizim</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/listeleme.html" rel="next">
-<link href="../chapters/chapter1.html" rel="prev">
+<link href="../chapters/tablolama.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -145,7 +144,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/resim-ekleme.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resim Ekleme ve Ayarları</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/tikz.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tikz ile Çizim</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -190,7 +189,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/resim-ekleme.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/resim-ekleme.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resim Ekleme ve Ayarları</span></span></a>
   </div>
 </li>
@@ -214,7 +213,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/tikz.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/tikz.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tikz ile Çizim</span></span></a>
   </div>
 </li>
@@ -231,7 +230,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resim Ekleme ve Ayarları</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tikz ile Çizim</span></h1>
 </div>
 
 
@@ -248,63 +247,113 @@ window.Quarto = {
 </header>
 
 
-<p><span class="math inline">\(\LaTeX\)</span> dokümanlarına resim eklemek için <code>graphicx</code> paketini kullanabilirsiniz. Bu paket, çeşitli resim formatlarını destekler ve resimlerin boyutlandırılması, döndürülmesi gibi işlemleri kolaylaştırır. Aşağıda, <code>graphicx</code> paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=<span class="fu">\textwidth</span>]{<span class="ex">resim.png</span>}</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bu komutu dokümanınızın preamble (ön ayar) kısmına ekleyerek <code>graphicx</code> paketini yükleyebilirsiniz. Resmi eklemek için ise <code>\includegraphics</code> komutunu kullanabilirsiniz. Yukarıdaki örnekte, <code>width=\textwidth</code> parametresi ile resmin genişliğini sayfa genişliğine ayarladık. Resim dosyasının adı ve uzantısı <code>{resim.png}</code> kısmında belirtilmiştir. Resim eklerken dikkat etmeniz gereken bazı önemli noktalar şunlardır: - Resim dosyasının doküman ile aynı dizinde bulunması veya doğru bir yol belirtilmesi gerekir. - Desteklenen resim formatları arasında PNG, JPEG, PDF ve EPS bulunur. - Resim boyutlandırma için <code>width</code>, <code>height</code>, <code>scale</code> gibi parametreler kullanılabilir. - Resmi döndürmek için <code>angle</code> parametresi kullanılabilir, örneğin <code>angle=90</code> ile resmi 90 derece döndürebilirsiniz. - Resimlerin hizalanması için <code>center</code>, <code>flushleft</code>, <code>flushright</code> gibi ortamlar kullanılabilir. Aşağıda, bir resmin nasıl ekleneceğine dair tam bir örnek verilmiştir:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[h!]</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\centering</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=<span class="fu">\textwidth</span>]{<span class="ex">resim.png</span>}</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bu örnekte, <code>figure</code> ortamı kullanılarak resim sayfa içinde ortalanmıştır. <code>h!</code> parametresi, resmin mümkün olan en yakın yere yerleştirilmesini sağlar. Resim ekleme işlemi bu şekilde gerçekleştirilir.</p>
-<p>Eklenen resimlere başlık eklemek ve referans vermek için <code>caption</code> ve <code>label</code> komutlarını kullanabilirsiniz. Aşağıda, bir resme başlık ekleme ve referans verme örneği verilmiştir:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[h!]</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\centering</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=<span class="fu">\textwidth</span>]{<span class="ex">resim.png</span>}</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\caption</span>{Bu bir resim başlığıdır.}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\label</span>{<span class="ex">fig:resim</span>}</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bu örnekte, <code>\caption</code> komutu ile resme bir başlık eklendik ve <code>\label</code> komutu ile resme bir etiket verdik. Bu etiketi kullanarak dokümanın başka bir yerinde resme referans verebilirsiniz. Örneğin, <code>\ref{fig:resim}</code> komutu ile resmin numarasını dokümanın başka bir yerinde gösterebilirsiniz. <code>\ref{}</code> komutu, resmin numarasını otomatik olarak günceller, böylece resim ekleme veya silme işlemlerinde referanslarınız doğru kalır. Aşağıda, resme referans verme örneği verilmiştir:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Dokümanın başka bir yerinde resme referans vermek için:</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\ref</span>{<span class="ex">fig:resim</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-Bu örnekte, <code>\ref{fig:resim}</code> komutu kullanılarak resmin numarası dokümanın başka bir yerinde gösterilmiştir. Bu sayede, resimlere kolayca referans verebilir ve dokümanınızın düzenini koruyabilirsiniz.
+<p><span class="math inline">\(\LaTeX\)</span> dokümanlarında çizim yapmak için TikZ paketi kullanılabilir. Aşağıda, TikZ ile basit bir çizim yapmanın örneği verilmiştir:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">tikz</span>}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (0,0) -- (1,1);</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tikz ile çizim yapmada <code>standalone</code> sınıfını kullanmak uygundur. Aşağıda, <code>standalone</code> sınıfı ile TikZ çizimi yapmanın örneği verilmiştir:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>[tikz,border=10pt]{<span class="ex">standalone</span>}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (0,0) -- (1,1);</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h2 class="anchored">
-Resim Ayarları ve Özelleştirme
+<code>draw</code> Komutu
 </h2>
-<p>Resimlerin doküman içindeki konumunu ve görünümünü özelleştirmek için çeşitli ayarlar ve paketler kullanabilirsiniz. İşte bazı yaygın kullanılan ayarlar ve paketler: - <strong>Boyutlandırma</strong>: Resimlerin boyutlarını <code>width</code>, <code>height</code>, ve <code>scale</code> parametreleri ile ayarlayabilirsiniz. Örneğin, <code>width=0.5\textwidth</code> ile resmin genişliğini sayfa genişliğinin yarısı yapabilirsiniz. - <strong>Döndürme</strong>: Resimleri <code>angle</code> parametresi ile döndürebilirsiniz. Örneğin, <code>angle=45</code> ile resmi 45 derece döndürebilirsiniz. - <strong>Hizalama</strong>: Resimleri <code>center</code>, <code>flushleft</code>, ve <code>flushright</code> ortamları ile hizalayabilirsiniz. Örneğin, <code>\begin{center} ... \end{center}</code> ile resmi ortalayabilirsiniz. - <strong>Çerçeve Ekleme</strong>: Resimlere çerçeve eklemek için <code>fancybox</code> paketini kullanabilirsiniz. Bu paket, resimlerin etrafına çeşitli stillerde çerçeveler eklemenizi sağlar. Aşağıda, <code>fancybox</code> paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">fancybox</span>}</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[h!]</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\centering</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\fancybox</span>{</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=<span class="fu">\textwidth</span>]{<span class="ex">resim.png</span>}</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}    </span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-Bu komutu dokümanınızın preamble (ön ayar) kısmına ekleyerek <code>fancybox</code> paketini yükleyebilirsiniz. Resmi çerçeve içine almak için ise <code>\fancybox{...}</code> komutunu kullanabilirsiniz. Yukarıdaki örnekte, resim çerçeve içine alınmıştır.
+<p><code>draw</code> komutu, TikZ ile çizim yaparken en temel komutlardan biridir. Bu komut, çizgiler, şekiller ve yollar çizmek için kullanılır. Aşağıda, <code>draw</code> komutunun nasıl kullanılacağına dair bazı örnekler verilmiştir:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (0,0) -- (2,2); <span class="co">% İki nokta arasında düz bir çizgi çizer</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (0,0) rectangle (2,1); <span class="co">% Dikdörtgen çizer</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (1,1) circle (1cm); <span class="co">% Yarıçapı 1 cm olan bir daire çizer</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (0,0) -- (1,2) -- (2,0); <span class="co">% Çokgen çizer</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tikz çizim birimi olarak santimetre (cm) kullanılır. Örneğin, bir çizgi çizerken koordinatları santimetre cinsinden belirtebilirsiniz:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (0,0) -- (2,0); <span class="co">% 2 cm uzunluğunda bir yatay çizgi çizer</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ayrıca, <code>draw</code> komutuyla çizilen şekillerin renklerini ve kalınlıklarını da ayarlayabilirsiniz. Örneğin:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span>[red, thick] (0,0) -- (2,2); <span class="co">% Kırmızı ve kalın bir çizgi çizer</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span>[blue, dashed] (0,0) rectangle (2,1); <span class="co">% Mavi ve kesikli bir dikdörtgen çizer</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span>[green, fill=yellow] (1,1) circle (1cm); <span class="co">% Yeşil ve sarı bir daire çizer</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tikz ile oklar çizmek için <code>-&gt;</code> sembolünü kullanabilirsiniz. Örneğin:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (0,0) -&gt; (2,2); <span class="co">% Başında ok olan bir çizgi çizer</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span>[-&gt;] (0,0) -- (2,0); <span class="co">% Başında ok olan yatay bir çizgi çizer</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Daha karmaşık şekiller ve yollar çizmek için <code>to</code>, <code>arc</code>, <code>bend</code>, <code>cycle</code> gibi ek komutlar da kullanılabilir. Örneğin:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (0,0) to (2,2); <span class="co">% İki nokta arasında düz bir çizgi çizer</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (0,0) arc (0:180:1cm); <span class="co">% Yarıçapı 1 cm olan bir yay çizer</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (0,0) -- (1,2) -- (2,0) -- cycle; <span class="co">% Çokgen çizer ve kapatır</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h2 class="anchored">
-Diğer Faydalı Paketler
+<code>node</code> Komutu
 </h2>
-<p>Resimlerle çalışırken kullanabileceğiniz bazı diğer faydalı paketler şunlardır:</p>
-<ul>
-<li><strong>subcaption</strong>: Birden fazla resmi yan yana veya alt alta yerleştirmek için kullanılır. Her resme ayrı başlık ekleyebilirsiniz.</li>
-<li><strong>subcaption</strong>: Birden fazla resmi yan yana veya alt alta yerleştirmek için kullanılır. Her resme ayrı başlık ekleyebilirsiniz.</li>
-<li><strong>wrapfig</strong>: Metin etrafında resimlerin sarılmasını sağlar.</li>
-<li><strong>float</strong>: Resimlerin konumlandırılmasını daha hassas kontrol etmenizi sağlar. <code>H</code> parametresi ile resmi tam olarak istediğiniz yere yerleştirebilirsiniz. Örneğin:</li>
-</ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[H]</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\centering</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\includegraphics</span>[width=<span class="fu">\textwidth</span>]{<span class="ex">resim.png</span>}</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bu komutu dokümanınızın preamble (ön ayar) kısmına ekleyerek <code>float</code> paketini yükleyebilirsiniz. Resmi tam olarak istediğiniz yere yerleştirmek için ise <code>H</code> parametresini kullanabilirsiniz. Yukarıdaki örnekte, resim tam olarak belirtilen konuma yerleştirilmiştir. - <strong>adjustbox</strong>: Resimlerin boyutlandırılması, döndürülmesi ve diğer ayarlarını daha esnek bir şekilde yapmanızı sağlar. - <strong>tikz</strong>: Vektör tabanlı grafikler ve diyagramlar oluşturmak için güçlü bir araçtır. Bu paketler ve ayarlar, <span class="math inline">\(\LaTeX\)</span> dokümanlarınıza resim eklerken size büyük esneklik ve kontrol sağlar. İhtiyaçlarınıza göre bu paketleri kullanarak resimlerinizi istediğiniz şekilde düzenleyebilirsiniz.</p>
+<p><code>node</code> komutu, TikZ ile çizim yaparken metin kutuları veya etiketler eklemek için kullanılır. Bu komut, belirli bir konuma metin yerleştirmek için oldukça kullanışlıdır. Aşağıda, <code>node</code> komutunun nasıl kullanılacağına dair bazı örnekler verilmiştir:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (0,0) -- (1,1) node[midway, above] {A};</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (1,0) -- (0,1) node[midway, below] {B};</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu örnekte, <code>node</code> komutu ile çizgi ortasına “A” ve “B” etiketleri eklenmiştir. <code>midway</code> parametresi, etiketin çizgi ortasına yerleştirilmesini sağlar. <code>above</code> ve <code>below</code> parametreleri ise etiketin çizginin üstünde veya altında konumlandırılmasını sağlar.</p>
+<h2 class="anchored">
+<code>coordinate</code> Komutu
+</h2>
+<p><code>coordinate</code> komutu, TikZ ile çizim yaparken belirli bir koordinat noktasını tanımlamak için kullanılır. Bu komut, çizimlerde referans noktaları oluşturmak için oldukça faydalıdır. Aşağıda, <code>coordinate</code> komutunun nasıl kullanılacağına dair bazı örnekler verilmiştir:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\coordinate</span> (A) at (0,0);</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\coordinate</span> (B) at (1,1);</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (A) -- (B);</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu örnekte, <code>coordinate</code> komutu ile “A” ve “B” adlı iki koordinat noktası tanımlanmış ve bu noktalar arasında bir çizgi çizilmiştir. <code>at</code> parametresi, koordinatın konumunu belirler.</p>
+<h2 class="anchored">
+<code>path</code> Komutu
+</h2>
+<p><code>path</code> komutu, TikZ ile çizim yaparken bir yol (path) tanımlamak için kullanılır. Bu komut, birden fazla çizgi ve şekli bir arada tanımlamak için oldukça kullanışlıdır. Aşağıda, <code>path</code> komutunun nasıl kullanılacağına dair bazı örnekler verilmiştir:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\path</span> (0,0) -- (1,1) -- (2,0);</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (0,0) -- (1,1) -- (2,0);</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu örnekte, <code>path</code> komutu ile bir yol tanımlanmış ve ardından <code>draw</code> komutu ile bu yol çizilmiştir. <code>path</code> komutu, karmaşık şekiller ve yollar oluşturmak için kullanılabilir.</p>
+<h2 class="anchored">
+<code>fill</code> Komutu
+</h2>
+<p><code>fill</code> komutu, TikZ ile çizim yaparken kapalı şekilleri doldurmak için kullanılır. Bu komut, belirli bir alanı renk veya desen ile doldurmak için oldukça faydalıdır. Aşağıda, <code>fill</code> komutunun nasıl kullanılacağına dair bazı örnekler verilmiştir:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\fill</span>[red] (0,0) rectangle (2,1); <span class="co">% Kırmızı bir dikdörtgen doldurur</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\fill</span>[blue] (1,1) circle (1cm); <span class="co">% Mavi bir daire doldurur</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu örnekte, <code>fill</code> komutu ile kırmızı bir dikdörtgen ve mavi bir daire doldurulmuştur. <code>fill</code> komutu, kapalı şekillerin içini renklendirmek için kullanılır ve <code>draw</code> komutu ile birlikte kullanılabilir.</p>
+<h2 class="anchored">
+<code>clip</code> Komutu
+</h2>
+<p><code>clip</code> komutu, TikZ ile çizim yaparken belirli bir alanı kesmek için kullanılır. Bu komut, genellikle karmaşık şekillerin içini doldurmak veya belirli bir alanı vurgulamak için kullanılır. Aşağıda, <code>clip</code> komutunun nasıl kullanılacağına dair bazı örnekler verilmiştir:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\fill</span>[red] (0,0) rectangle (2,1);</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">scope</span>}</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\clip</span> (1,0) circle (1cm);</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\fill</span>[blue] (0,0) rectangle (2,1);</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">scope</span>}</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu örnekte, <code>clip</code> komutu ile mavi dolgu yalnızca kırmızı dikdörtgenin içindeki daire alanında görünür. <code>scope</code> ortamı, kesme işlemini sınırlamak için kullanılır. Bu örnekte, <code>clip</code> komutunun nasıl çalıştığını ve belirli bir alanı nasıl kesebileceğinizi göstermektedir.</p>
+<p>Tikz ortamında çizim yaparken babel paketini kullanıyorsanız, <code>\usetikzlibrary{babel}</code> komutunu preamble kısmına eklemeniz önerilir. Bu, Tikz’in Türkçe karakterlerle uyumlu çalışmasını sağlar. Örneğin:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">article</span>}</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[turkish, shorthands=:!]{<span class="ex">babel</span>}</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">tikz</span>}  </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{babel}</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>} </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\draw</span> (0,0) -- (1,1) node[midway, above] {Çizim Örneği};</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu örnekte, <code>\usetikzlibrary{babel}</code> komutu ile Tikz’in Türkçe karakterlerle uyumlu çalışması sağlanmıştır. Böylece, çizimlerde Türkçe karakterler sorunsuz bir şekilde kullanılabilir.</p>
+<p>Daha fazla bilgi ve örnekler için Tikz paketinin dokümantasyonuna <a href="https://ctan.org/pkg/pgf">TikZ &amp; PGF Manual</a> adresinden ulaşabilirsiniz.</p>
 
 
 
@@ -720,14 +769,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/chapter1.html" class="pagination-link" aria-label="Geometri Ayarları">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Geometri Ayarları</span></span>
+      <a href="../chapters/tablolama.html" class="pagination-link" aria-label="Tablo Oluşturma">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tablo Oluşturma</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/listeleme.html" class="pagination-link" aria-label="Listeleme ve Madde İşaretleri">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Listeleme ve Madde İşaretleri</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
