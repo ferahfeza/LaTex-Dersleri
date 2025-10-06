@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>LaTeX Konuları – 6&nbsp; Formül ve Denklemler</title>
+<title>LaTeX Konuları – 9&nbsp; pgfplots Kütüphanesi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/tablolama.html" rel="next">
-<link href="../chapters/listeleme.html" rel="prev">
+<link href="../chapters/tikz.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -145,7 +144,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/matematik.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Formül ve Denklemler</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/pgf.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">pgfplots Kütüphanesi</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -202,7 +201,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/matematik.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/matematik.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Formül ve Denklemler</span></span></a>
   </div>
 </li>
@@ -220,7 +219,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/pgf.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/pgf.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">pgfplots Kütüphanesi</span></span></a>
   </div>
 </li>
@@ -237,7 +236,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Formül ve Denklemler</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">pgfplots Kütüphanesi</span></h1>
 </div>
 
 
@@ -254,68 +253,37 @@ window.Quarto = {
 </header>
 
 
-<p><span class="math inline">\(\LaTeX\)</span> dokümanlarında formül ve denklemler oluşturmak için çeşitli yöntemler bulunmaktadır. Aşağıda, bu yöntemlerin nasıl kullanılacağına dair örnekler verilmiştir:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ss">F=</span><span class="sc">\dfrac</span><span class="ss">{dp}{dt}</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>```latex</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">a^2 + b^2 &amp;= c^2 </span><span class="sc">\\</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="sc">\int</span><span class="ss">_0^1 x^2 </span><span class="sc">\,</span><span class="ss"> dx &amp;= </span><span class="sc">\frac</span><span class="ss">{1}{3}</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>```latex</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">gather</span>}</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">x + y = z </span><span class="sc">\\</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">x - y = w</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">gather</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bu örneklerde görüldüğü gibi, <code>equation</code> ortamı tek bir denklemi numaralandırarak yazarken, <code>align</code> ortamı birden fazla denklemi hizalı bir şekilde yazmanıza olanak tanır. <code>gather</code> ortamı ise birden fazla denklemi merkezde hizalayarak yazmanıza olanak tanır. Ayrıca, formül ve denklemleri iç içe kullanarak daha karmaşık yapılar oluşturabilirsiniz. Örneğin:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">aligned</span>}</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">E &amp;= mc^2 </span><span class="sc">\\</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ss">F &amp;= ma</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">aligned</span>}</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bu örnekte, <code>aligned</code> ortamı içinde birden fazla denklemi hizalı bir şekilde yazdık. Benzer şekilde, <code>align</code> ve <code>gather</code> ortamları da iç içe kullanılabilir. Formül ve denklemlerin görünümünü özelleştirmek için çeşitli paketler de mevcuttur. Örneğin, <code>amsmath</code> paketi, formül ve denklemlerin düzenini ve numaralandırılmasını özelleştirmenize olanak tanır. Aşağıda, <code>amsmath</code> paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ss">E = mc^2</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bu komutu dokümanınızın preamble (ön ayar) kısmına ekleyerek <code>amsmath</code> paketini yükleyebilirsiniz. <code>align</code> ve <code>gather</code> ortamları gibi daha fazla özellikten yararlanabilirsiniz. Yukarıdaki örnekte, <code>equation</code> ortamı içinde bir denklemi yazdık. Formül ve denklemleri yazarken, matematiksel sembollerin doğru bir şekilde görüntülenmesi için <code>math</code> modunu kullanmalısınız. Örneğin:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ss">E = mc^2</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bu örnekte, <code>equation</code> ortamı içinde bir denklemi yazdık. Benzer şekilde, <code>align</code> ve <code>gather</code> ortamları da kullanılabilir. Formül ve denklemler, <span class="math inline">\(\LaTeX\)</span> dokümanlarında düzenli ve okunabilir içerik oluşturmak için oldukça kullanışlıdır. İhtiyaçlarınıza göre bu ortamları ve paketleri kullanarak formül ve denklemleri kolayca gerçekleştirebilirsiniz.</p>
-<p>Satır içi formüller için <code>$...$</code> veya <code>\(...\)</code> kullanabilirsiniz. Örneğin, <span class="math inline">\(F=\dfrac{dp}{dt}\)</span> veya (F=) şeklinde yazabilirsiniz.</p>
-<h2 class="anchored">
-Ana Semboller ve Operatörler
-</h2>
-<p>Matematiksel ifadelerde sıkça kullanılan bazı semboller ve operatörler şunlardır:</p>
-<ul>
-<li>Toplama: <code>+</code></li>
-<li>Çıkarma: <code>-</code></li>
-<li>Çarpma: <code>*</code></li>
-<li>Bölme: <code>/</code></li>
-<li>Eşittir: <code>=</code></li>
-<li>Yaklaşık eşittir: <code>\approx</code></li>
-<li>Denklem: <code>\equiv</code></li>
-<li>Sonsuzluk: <code>\infty</code></li>
-<li>Karekök: <code>\sqrt{}</code></li>
-<li>Üs: <code>{}^</code></li>
-<li>Alt simge: <code>{}_</code></li>
-<li>Kesir: <code>\frac{}{}</code> veya <code>\dfrac{}{}</code> (daha büyük kesirler için)</li>
-<li>Limit: <code>\lim_{x \to a}</code></li>
-<li>Toplam: <code>\sum_{i=1}^{n}</code></li>
-<li>İntegral: <code>\int_{a}^{b}</code></li>
-<li>Parantezler: <code>()</code>, <code>[]</code>, <code>{}</code>, <code>\left( \right)</code>, <code>\left[ \right]</code>, <code>\left\{ \right\}</code></li>
-<li>Yunan harfleri: <code>\alpha</code>, <code>\beta</code>, <code>\gamma</code>, <code>\delta</code>, <code>\epsilon</code>, <code>\zeta</code>, <code>\eta</code>, <code>\theta</code>, <code>\iota</code>, <code>\kappa</code>, <code>\lambda</code>, <code>\mu</code>, <code>\nu</code>, <code>\xi</code>, <code>\pi</code>, <code>\rho</code>, <code>\sigma</code>, <code>\tau</code>, <code>\upsilon</code>, <code>\phi</code>, <code>\chi</code>, <code>\psi</code>, <code>\omega</code></li>
-</ul>
-<p>Daha fazla bilgi ve seçenekler için <code>amsmath</code> paketinin dokümantasyonuna <a href="https://ctan.org/pkg/amsmath">amsmath package</a> adresinden ulaşabilirsiniz.</p>
+<p><span class="math inline">\(\LaTeX\)</span> dokümanlarında grafikler ve veri görselleştirmeleri oluşturmak için <code>pgfplots</code> kütüphanesini kullanabilirsiniz. Bu kütüphane, TikZ üzerine inşa edilmiştir ve 2D ile 3D grafikler çizmek için güçlü araçlar sunar. Aşağıda, <code>pgfplots</code> kütüphanesinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">pgfplots</span>}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\pgfplotsset</span>{compat=1.17} <span class="co">% Sürüm uyumluluğu ayarı</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu komutu dokümanınızın preamble (ön ayar) kısmına ekleyerek <code>pgfplots</code> kütüphanesini yükleyebilirsiniz. <code>compat</code> parametresi, kütüphanenin belirli bir sürümüyle uyumlu çalışmasını sağlar. Yukarıdaki örnekte, <code>1.17</code> sürümü kullanılmıştır. Aşağıda, <code>pgfplots</code> kütüphanesi ile basit bir 2D grafik oluşturma örneği verilmiştir:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">axis</span>}</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span> {sin(deg(x))};</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">axis</span>}</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu örnekte, <code>pgfplots</code> kütüphanesi ile bir <code>tikzpicture</code> ortamı içinde bir <code>axis</code> ortamı oluşturulmuş ve <code>addplot</code> komutu ile sinüs fonksiyonu çizilmiştir. <code>deg(x)</code> ifadesi, x değerlerini derece cinsine çevirir.</p>
+<p><code>axis</code> ortamı, grafik eksenlerini ve etiketlerini otomatik olarak oluşturur. Ayrıca, <code>pgfplots</code> kütüphanesi ile grafiklerin görünümünü ve stilini özelleştirmek için çeşitli seçenekler de mevcuttur. Örneğin, eksen etiketlerini, başlıkları ve ızgara çizgilerini ekleyebilirsiniz:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">axis</span>}[</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    title={Sinüs Fonksiyonu},</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    xlabel={X Ekseni},</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    ylabel={Y Ekseni},</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    grid=major</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span> {sin(deg(x))};</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">axis</span>}</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu örnekte, <code>title</code>, <code>xlabel</code>, <code>ylabel</code> ve <code>grid</code> gibi parametreler kullanılarak grafik başlığı, eksen etiketleri ve ızgara çizgileri eklenmiştir. <code>grid=major</code> ifadesi, ana ızgara çizgilerini gösterir.</p>
+<p>Daha karmaşık grafikler oluşturmak için <code>pgfplots</code> kütüphanesinin dokümantasyonuna başvurabilirsiniz. Bu kütüphane, çok sayıda veri seti çizme, farklı grafik türleri (çubuk grafikler, histogramlar, kutu grafikleri vb.) oluşturma ve grafiklerin stilini detaylı bir şekilde özelleştirme gibi gelişmiş özellikler sunar. Ayrıca, <code>pgfplots</code> kütüphanesi ile 3D grafikler de oluşturabilirsiniz. Aşağıda, basit bir 3D yüzey grafiği oluşturma örneği verilmiştir:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">axis</span>}</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span>[surf] {sin(deg(sqrt(x^2 + y^2)))};</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">axis</span>}</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu örnekte, <code>surf</code> seçeneği kullanılarak 3D yüzey grafiği çizilmiştir. <code>sqrt(x^2 + y^2)</code> ifadesi, x ve y koordinatlarının karelerinin toplamının karekökünü alır ve sinüs fonksiyonuna uygulanır.</p>
+<hr>
+<p><strong>pgfplots örneklerinin PDF çıktısını indirmek için:</strong> <a href="../Tikz-kod/pgf_ornekleri.pdf">PDF olarak indir</a></p>
 
 
 
@@ -731,14 +699,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/listeleme.html" class="pagination-link" aria-label="Listeleme ve Madde İşaretleri">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Listeleme ve Madde İşaretleri</span></span>
+      <a href="../chapters/tikz.html" class="pagination-link" aria-label="Tikz ile Çizim">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tikz ile Çizim</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/tablolama.html" class="pagination-link" aria-label="Tablo Oluşturma">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tablo Oluşturma</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

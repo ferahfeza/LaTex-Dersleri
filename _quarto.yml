@@ -16,7 +16,7 @@ book:
     - chapters/matematik.qmd
     - chapters/tablolama.qmd
     - chapters/tikz.qmd
-    
+    - chapters/pgf.qmd
 format:
   html:
     theme: superhero

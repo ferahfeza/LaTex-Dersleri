@@ -22,5 +22,8 @@
   },
   "chapters/tikz.qmd": {
     "tikz.html": "6e1a9f46"
+  },
+  "chapters/pgf.qmd": {
+    "pgf.html": "cde19414"
   }
 }

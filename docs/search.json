@@ -78,5 +78,15 @@
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Tikz ile Çizim</span>"
     ]
+  },
+  {
+    "objectID": "chapters/pgf.html",
+    "href": "chapters/pgf.html",
+    "title": "9  pgfplots Kütüphanesi",
+    "section": "",
+    "text": "\\(\\LaTeX\\) dokümanlarında grafikler ve veri görselleştirmeleri oluşturmak için pgfplots kütüphanesini kullanabilirsiniz. Bu kütüphane, TikZ üzerine inşa edilmiştir ve 2D ile 3D grafikler çizmek için güçlü araçlar sunar. Aşağıda, pgfplots kütüphanesinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:\n\\usepackage{pgfplots}\n\\pgfplotsset{compat=1.17} % Sürüm uyumluluğu ayarı\nBu komutu dokümanınızın preamble (ön ayar) kısmına ekleyerek pgfplots kütüphanesini yükleyebilirsiniz. compat parametresi, kütüphanenin belirli bir sürümüyle uyumlu çalışmasını sağlar. Yukarıdaki örnekte, 1.17 sürümü kullanılmıştır. Aşağıda, pgfplots kütüphanesi ile basit bir 2D grafik oluşturma örneği verilmiştir:\n\\begin{tikzpicture}\n\\begin{axis}\n\\addplot {sin(deg(x))};\n\\end{axis}\n\\end{tikzpicture}\nBu örnekte, pgfplots kütüphanesi ile bir tikzpicture ortamı içinde bir axis ortamı oluşturulmuş ve addplot komutu ile sinüs fonksiyonu çizilmiştir. deg(x) ifadesi, x değerlerini derece cinsine çevirir.\naxis ortamı, grafik eksenlerini ve etiketlerini otomatik olarak oluşturur. Ayrıca, pgfplots kütüphanesi ile grafiklerin görünümünü ve stilini özelleştirmek için çeşitli seçenekler de mevcuttur. Örneğin, eksen etiketlerini, başlıkları ve ızgara çizgilerini ekleyebilirsiniz:\n\\begin{tikzpicture}\n\\begin{axis}[\n    title={Sinüs Fonksiyonu},\n    xlabel={X Ekseni},\n    ylabel={Y Ekseni},\n    grid=major\n]\n\\addplot {sin(deg(x))};\n\\end{axis}\n\\end{tikzpicture}\nBu örnekte, title, xlabel, ylabel ve grid gibi parametreler kullanılarak grafik başlığı, eksen etiketleri ve ızgara çizgileri eklenmiştir. grid=major ifadesi, ana ızgara çizgilerini gösterir.\nDaha karmaşık grafikler oluşturmak için pgfplots kütüphanesinin dokümantasyonuna başvurabilirsiniz. Bu kütüphane, çok sayıda veri seti çizme, farklı grafik türleri (çubuk grafikler, histogramlar, kutu grafikleri vb.) oluşturma ve grafiklerin stilini detaylı bir şekilde özelleştirme gibi gelişmiş özellikler sunar. Ayrıca, pgfplots kütüphanesi ile 3D grafikler de oluşturabilirsiniz. Aşağıda, basit bir 3D yüzey grafiği oluşturma örneği verilmiştir:\n\\begin{tikzpicture}\n\\begin{axis}\n\\addplot[surf] {sin(deg(sqrt(x^2 + y^2)))};\n\\end{axis}\n\\end{tikzpicture}\nBu örnekte, surf seçeneği kullanılarak 3D yüzey grafiği çizilmiştir. sqrt(x^2 + y^2) ifadesi, x ve y koordinatlarının karelerinin toplamının karekökünü alır ve sinüs fonksiyonuna uygulanır.\n\npgfplots örneklerinin PDF çıktısını indirmek için: PDF olarak indir",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>pgfplots Kütüphanesi</span>"
+    ]
   }
 ]
