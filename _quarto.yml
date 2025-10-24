@@ -3,7 +3,7 @@ project:
   output-dir: docs
 book:
   # başlık: "LaTeX Konuları"  # Quarto'da 'title' anahtarını kullanmak zorundasınız, ancak başlık için Türkçe açıklama eklenebilir
-  title: "LaTeX Konuları"
+  title: "LaTeX Dersleri"
   # yazar: "Ali İhsan ÇANAKOĞLU"  # Quarto'da 'author' anahtarını kullanmak zorundasınız, ancak yazar için Türkçe açıklama eklenebilir
   author: "Ali İhsan ÇANAKOĞLU"
   # bölümler:  # Quarto'da 'chapters' anahtarını kullanmak zorundasınız, ancak bölümler için Türkçe açıklama eklenebilir
