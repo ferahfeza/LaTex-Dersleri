@@ -17,6 +17,7 @@ book:
     - chapters/tablolama.qmd
     - chapters/tikz.qmd
     - chapters/pgf.qmd
+    - chapters/komut-tanimlama.qmd
 format:
   html:
     theme: superhero
