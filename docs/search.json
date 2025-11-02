@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "LaTeX Dersleri",
+    "title": "LaTeX Konuları",
     "section": "",
     "text": "\\(\\LaTeX\\) teknik dokümanlar hazırlamada sıklıkla kullanılan bir sistemidir. Leslie Lamport tarafından geliştirilmiş olup, özellikle akademik ve bilimsel dokümanların hazırlanmasında yaygın olarak kullanılmaktadır.\n\\(\\LaTeX\\)’de kullanılan belge sınıflarını şöyle sıralayabiliriz:\n\narticle: Makale türündeki belgeler için kullanılır.\nreport: Daha uzun belgeler ve raporlar için uygundur.\nbook: Kitap formatındaki belgeler için kullanılır.\nletter: Mektup yazmak için özel bir sınıftır.\nbeamer: Sunumlar hazırlamak için kullanılır.\nslides: Basit sunumlar için kullanılır.\n\n\\(\\LaTeX\\)’in sunduğu bu belge sınıfları, kullanıcıların ihtiyaçlarına göre farklı formatlarda dokümanlar oluşturmasına olanak tanır. Her sınıf, belirli bir türdeki belge için optimize edilmiştir ve farklı özellikler sunar.\n\\(\\LaTeX\\)’in sunduğu avantajlar ve Word gibi kelime işlemcilere göre avantajları şunlardır:\n\nYüksek Kalite: \\(\\LaTeX\\), özellikle matematiksel ifadeler ve bilimsel notasyonlar için yüksek kaliteli çıktı sağlar.\nOtomatik Biçimlendirme: Belge yapısını otomatik olarak yönetir, bu da kullanıcıların biçimlendirme ile uğraşmadan içeriğe odaklanmasını sağlar.\nReferans Yönetimi: Bibliyografya ve atıf yönetimi konusunda güçlü araçlar sunar.\nEsneklik ve Özelleştirme: Kullanıcılar, paketler ve makrolar aracılığıyla belgelerini özelleştirebilirler.\nAçık Kaynak: \\(\\LaTeX\\) ücretsizdir ve geniş bir kullanıcı topluluğu tarafından desteklenir.\nUzun Belgeler İçin İdeal: Kitaplar, tezler ve raporlar gibi uzun belgeler için mükemmeldir.\nPlatform Bağımsızlığı: \\(\\LaTeX\\) her türlü işletim sisteminde çalışabilir.\nSürüm Kontrolü ile Uyumlu: Metin tabanlı yapısı, sürüm kontrol sistemleriyle kolayca entegre olmasını sağlar.\nProfesyonel Görünüm: \\(\\LaTeX\\) ile hazırlanan belgeler genellikle daha profesyonel ve düzenli görünür.\nMatematiksel İfadeler: \\(\\LaTeX\\), karmaşık matematiksel ifadeleri kolayca yazmayı sağlar.",
     "crumbs": [
@@ -87,6 +87,66 @@
     "text": "\\(\\LaTeX\\) dokümanlarında grafikler ve veri görselleştirmeleri oluşturmak için pgfplots kütüphanesini kullanabilirsiniz. Bu kütüphane, TikZ üzerine inşa edilmiştir ve 2D ile 3D grafikler çizmek için güçlü araçlar sunar. Aşağıda, pgfplots kütüphanesinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:\n\\usepackage{pgfplots}\n\\pgfplotsset{compat=1.17} % Sürüm uyumluluğu ayarı\nBu komutu dokümanınızın preamble (ön ayar) kısmına ekleyerek pgfplots kütüphanesini yükleyebilirsiniz. compat parametresi, kütüphanenin belirli bir sürümüyle uyumlu çalışmasını sağlar. Yukarıdaki örnekte, 1.17 sürümü kullanılmıştır. Aşağıda, pgfplots kütüphanesi ile basit bir 2D grafik oluşturma örneği verilmiştir:\n\\begin{tikzpicture}\n\\begin{axis}\n\\addplot {sin(deg(x))};\n\\end{axis}\n\\end{tikzpicture}\nBu örnekte, pgfplots kütüphanesi ile bir tikzpicture ortamı içinde bir axis ortamı oluşturulmuş ve addplot komutu ile sinüs fonksiyonu çizilmiştir. deg(x) ifadesi, x değerlerini derece cinsine çevirir.\naxis ortamı, grafik eksenlerini ve etiketlerini otomatik olarak oluşturur. Ayrıca, pgfplots kütüphanesi ile grafiklerin görünümünü ve stilini özelleştirmek için çeşitli seçenekler de mevcuttur. Örneğin, eksen etiketlerini, başlıkları ve ızgara çizgilerini ekleyebilirsiniz:\n\\begin{tikzpicture}\n\\begin{axis}[\n    title={Sinüs Fonksiyonu},\n    xlabel={X Ekseni},\n    ylabel={Y Ekseni},\n    grid=major\n]\n\\addplot {sin(deg(x))};\n\\end{axis}\n\\end{tikzpicture}\nBu örnekte, title, xlabel, ylabel ve grid gibi parametreler kullanılarak grafik başlığı, eksen etiketleri ve ızgara çizgileri eklenmiştir. grid=major ifadesi, ana ızgara çizgilerini gösterir.\nDaha karmaşık grafikler oluşturmak için pgfplots kütüphanesinin dokümantasyonuna başvurabilirsiniz. Bu kütüphane, çok sayıda veri seti çizme, farklı grafik türleri (çubuk grafikler, histogramlar, kutu grafikleri vb.) oluşturma ve grafiklerin stilini detaylı bir şekilde özelleştirme gibi gelişmiş özellikler sunar. Ayrıca, pgfplots kütüphanesi ile 3D grafikler de oluşturabilirsiniz. Aşağıda, basit bir 3D yüzey grafiği oluşturma örneği verilmiştir:\n\\begin{tikzpicture}\n\\begin{axis}\n\\addplot[surf] {sin(deg(sqrt(x^2 + y^2)))};\n\\end{axis}\n\\end{tikzpicture}\nBu örnekte, surf seçeneği kullanılarak 3D yüzey grafiği çizilmiştir. sqrt(x^2 + y^2) ifadesi, x ve y koordinatlarının karelerinin toplamının karekökünü alır ve sinüs fonksiyonuna uygulanır.\n\npgfplots örneklerinin PDF çıktısını indirmek için: PDF olarak indir",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>pgfplots Kütüphanesi</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/komut-tanimlama.html",
+    "href": "chapters/komut-tanimlama.html",
+    "title": "10  LaTeX’te Yeni Komut Tanımlama",
+    "section": "",
+    "text": "10.1 Temel Kullanım",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>LaTeX'te Yeni Komut Tanımlama</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/komut-tanimlama.html#temel-kullanım",
+    "href": "chapters/komut-tanimlama.html#temel-kullanım",
+    "title": "10  LaTeX’te Yeni Komut Tanımlama",
+    "section": "",
+    "text": "10.1.1 Yeni Komut Tanımlama\n\\newcommand{\\komutadi}{komutun içeriği}\nÖrnek:\n\\newcommand{\\vekt}{\\mathbf{v}}\nBu tanımlama ile \\vekt yazdığınızda kalın v harfi elde edersiniz.\n\n\n10.1.2 Parametreli Komut Tanımlama\n\\newcommand{\\komutadi}[parametre sayısı]{komutun içeriği}\nÖrnek:\n\\newcommand{\\mutlakdeger}[1]{|#1|}\nBu tanımlama ile \\mutlakdeger{x} yazdığınızda |x| elde edersiniz.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>LaTeX'te Yeni Komut Tanımlama</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/komut-tanimlama.html#var-olan-komutu-yeniden-tanımlama",
+    "href": "chapters/komut-tanimlama.html#var-olan-komutu-yeniden-tanımlama",
+    "title": "10  LaTeX’te Yeni Komut Tanımlama",
+    "section": "10.2 Var Olan Komutu Yeniden Tanımlama",
+    "text": "10.2 Var Olan Komutu Yeniden Tanımlama\n\\renewcommand{\\komutadi}{yeni içerik}\nÖrnek:\n\\renewcommand{\\vec}[1]{\\boldsymbol{#1}}\nBu tanımlama ile \\vec{a} yazdığınızda kalın a harfi elde edersiniz.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>LaTeX'te Yeni Komut Tanımlama</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/komut-tanimlama.html#sık-kullanılan-komutlar",
+    "href": "chapters/komut-tanimlama.html#sık-kullanılan-komutlar",
+    "title": "10  LaTeX’te Yeni Komut Tanımlama",
+    "section": "10.3 Sık Kullanılan Komutlar",
+    "text": "10.3 Sık Kullanılan Komutlar\n\n\\newcommand\n\\renewcommand\n\\providecommand (eğer komut tanımlı değilse tanımlar)",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>LaTeX'te Yeni Komut Tanımlama</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/komut-tanimlama.html#dikkat-edilmesi-gerekenler",
+    "href": "chapters/komut-tanimlama.html#dikkat-edilmesi-gerekenler",
+    "title": "10  LaTeX’te Yeni Komut Tanımlama",
+    "section": "10.4 Dikkat Edilmesi Gerekenler",
+    "text": "10.4 Dikkat Edilmesi Gerekenler\n\nKomut adı mutlaka \\ ile başlamalıdır.\nAynı isimde bir komut varsa, \\renewcommand kullanılmalıdır.\nParametreli komutlarda #1, #2 … ile parametreler kullanılır.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>LaTeX'te Yeni Komut Tanımlama</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/komut-tanimlama.html#örnek",
+    "href": "chapters/komut-tanimlama.html#örnek",
+    "title": "10  LaTeX’te Yeni Komut Tanımlama",
+    "section": "10.5 Örnek",
+    "text": "10.5 Örnek\n\\newcommand{\\integral}[2]{\\int_{#1}^{#2}}\nKullanımı:\n\\integral{0}{\\infty} f(x) dx\nDaha fazla bilgi için LaTeX Wikibook sayfasına göz atabilirsiniz.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>LaTeX'te Yeni Komut Tanımlama</span>"
     ]
   }
 ]

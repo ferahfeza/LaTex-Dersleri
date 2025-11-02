@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>LaTeX Konuları – 5&nbsp; Listeleme ve Madde İşaretleri</title>
+<title>LaTeX Konuları – 10&nbsp; LaTeX’te Yeni Komut Tanımlama</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/matematik.html" rel="next">
-<link href="../chapters/resim-ekleme.html" rel="prev">
+<link href="../chapters/pgf.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -103,35 +102,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -145,7 +115,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/listeleme.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Listeleme ve Madde İşaretleri</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/komut-tanimlama.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">LaTeX’te Yeni Komut Tanımlama</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -196,7 +166,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/listeleme.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/listeleme.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Listeleme ve Madde İşaretleri</span></span></a>
   </div>
 </li>
@@ -226,7 +196,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/komut-tanimlama.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/komut-tanimlama.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">LaTeX’te Yeni Komut Tanımlama</span></span></a>
   </div>
 </li>
@@ -235,15 +205,29 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#temel-kullanım" id="toc-temel-kullanım" class="nav-link active" data-scroll-target="#temel-kullanım"><span class="header-section-number">10.1</span> Temel Kullanım</a>
+  <ul class="collapse">
+  <li><a href="#yeni-komut-tanımlama" id="toc-yeni-komut-tanımlama" class="nav-link" data-scroll-target="#yeni-komut-tanımlama"><span class="header-section-number">10.1.1</span> Yeni Komut Tanımlama</a></li>
+  <li><a href="#parametreli-komut-tanımlama" id="toc-parametreli-komut-tanımlama" class="nav-link" data-scroll-target="#parametreli-komut-tanımlama"><span class="header-section-number">10.1.2</span> Parametreli Komut Tanımlama</a></li>
+  </ul></li>
+  <li><a href="#var-olan-komutu-yeniden-tanımlama" id="toc-var-olan-komutu-yeniden-tanımlama" class="nav-link" data-scroll-target="#var-olan-komutu-yeniden-tanımlama"><span class="header-section-number">10.2</span> Var Olan Komutu Yeniden Tanımlama</a></li>
+  <li><a href="#sık-kullanılan-komutlar" id="toc-sık-kullanılan-komutlar" class="nav-link" data-scroll-target="#sık-kullanılan-komutlar"><span class="header-section-number">10.3</span> Sık Kullanılan Komutlar</a></li>
+  <li><a href="#dikkat-edilmesi-gerekenler" id="toc-dikkat-edilmesi-gerekenler" class="nav-link" data-scroll-target="#dikkat-edilmesi-gerekenler"><span class="header-section-number">10.4</span> Dikkat Edilmesi Gerekenler</a></li>
+  <li><a href="#örnek" id="toc-örnek" class="nav-link" data-scroll-target="#örnek"><span class="header-section-number">10.5</span> Örnek</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Listeleme ve Madde İşaretleri</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">LaTeX’te Yeni Komut Tanımlama</span></h1>
 </div>
 
 
@@ -260,82 +244,56 @@ window.Quarto = {
 </header>
 
 
-<p><span class="math inline">\(\LaTeX\)</span> dokümanlarında listeleme yapmak için <code>itemize</code>, <code>enumerate</code> ve <code>description</code> gibi ortamları kullanabilirsiniz. Bu ortamlar, madde işaretli listeler, numaralandırılmış listeler ve tanımlama listeleri oluşturmanıza olanak tanır. Aşağıda, bu ortamların nasıl kullanılacağına dair örnekler verilmiştir:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Madde 1</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Madde 2</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Madde 3</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>```latex</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Birinci</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> İkinci</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Üçüncü</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>```latex</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">description</span>}</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span>[Öğe 1] Açıklama 1</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span>[Öğe 2] Açıklama 2</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span>[Öğe 3] Açıklama 3</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">description</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bu örneklerde görüldüğü gibi, <code>itemize</code> ortamı madde işaretli listeler oluştururken, <code>enumerate</code> ortamı numaralandırılmış listeler oluşturur. <code>description</code> ortamı ise her öğe için bir başlık ve açıklama sağlar. Ayrıca, liste öğelerini iç içe kullanarak daha karmaşık yapılar oluşturabilirsiniz. Örneğin:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Madde 1</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Alt madde 1</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Alt madde 2</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">\end</span>{<span class="ex">itemize</span>}</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Madde 2</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Madde 3</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bu örnekte, <code>itemize</code> ortamı içinde başka bir <code>itemize</code> ortamı kullanarak alt maddeler oluşturduk. Benzer şekilde, <code>enumerate</code> ve <code>description</code> ortamları da iç içe kullanılabilir. Listeleme ortamlarının görünümünü özelleştirmek için çeşitli paketler de mevcuttur. Örneğin, <code>enumitem</code> paketi, liste ortamlarının etiketlerini, boşluklarını ve diğer özelliklerini özelleştirmenize olanak tanır. Aşağıda, <code>enumitem</code> paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">enumitem</span>}</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}[label=<span class="fu">\textbullet</span>, leftmargin=*]</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Madde 1</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Madde 2</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Madde 3</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bu komutu dokümanınızın preamble (ön ayar) kısmına ekleyerek <code>enumitem</code> paketini yükleyebilirsiniz. <code>label</code> parametresi ile madde işaretlerini özelleştirebilir ve <code>leftmargin</code> parametresi ile liste kenar boşluklarını ayarlayabilirsiniz. Yukarıdaki örnekte, madde işaretleri olarak dolu yuvarlak (<code>\textbullet</code>) kullanılmış ve kenar boşlukları kaldırılmıştır. Ayrıca, <code>paralist</code> paketi de listeleme ortamlarını daha esnek hale getirir ve farklı liste stilleri oluşturmanıza olanak tanır. Aşağıda, <code>paralist</code> paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">paralist</span>}</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">compactitem</span>}</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Madde 1</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Madde 2</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Madde 3</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">compactitem</span>}</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Numara yerine harf veya Roma rakamları kullanmak için <code>enumerate</code> ortamında <code>enumitem</code> paketini kullanabilirsiniz. Örneğin:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">enumitem</span>}</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}[label=<span class="fu">\alph*</span>.]</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Birinci</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> İkinci</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\item</span> Üçüncü</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bu örnekte, <code>label=\alph*.</code> parametresi ile liste öğeleri küçük harflerle numaralandırılmıştır. Benzer şekilde, <code>\Alph*</code> büyük harfler, <code>\roman*</code> küçük Roma rakamları ve <code>\Roman*</code> büyük Roma rakamları için kullanılabilir. Listeleme ortamları, <span class="math inline">\(\LaTeX\)</span> dokümanlarında düzenli ve okunabilir içerik oluşturmak için oldukça kullanışlıdır. İhtiyaçlarınıza göre bu ortamları ve paketleri kullanarak listeleme işlemlerini kolayca gerçekleştirebilirsiniz.</p>
-<h2 class="anchored">
-Paragraf ve Başlık Ayarları
-</h2>
-<p><span class="math inline">\(\LaTeX\)</span> dokümanlarında paragraf ve başlık ayarlarını özelleştirmek için çeşitli paketler ve komutlar bulunmaktadır. Aşağıda, bu ayarların nasıl yapılacağına dair örnekler verilmiştir:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">parskip</span>}</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">parskip</span>}</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>Bu, paragraflar arasında boşluk bırakır ve paragraf başlarındaki girintileri kaldırır.</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">parskip</span>}</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bu örnekte, <code>parskip</code> paketi kullanılarak paragraflar arasına boşluk eklenmiş ve paragraf başlarındaki girintiler kaldırılmıştır. Bu, özellikle akademik ve teknik dokümanlarda daha temiz bir görünüm sağlar. Benzer şekilde, <code>indentfirst</code> paketi kullanılarak dokümandaki ilk paragrafın da diğer paragraflar gibi girintili olması sağlanabilir. Aşağıda, <code>indentfirst</code> paketinin nasıl yükleneceği ve kullanılacağına dair bir örnek verilmiştir:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">indentfirst</span>}</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\section</span>{Giriş}</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>Bu, ilk paragraftır.</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>LaTeX’te kendi komutlarınızı tanımlayarak dokümanınızı daha verimli ve okunabilir hale getirebilirsiniz. Bunun için genellikle <code>\newcommand</code> ve <code>\renewcommand</code> komutları kullanılır.</p>
+<section id="temel-kullanım" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="temel-kullanım"><span class="header-section-number">10.1</span> Temel Kullanım</h2>
+<section id="yeni-komut-tanımlama" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="yeni-komut-tanımlama"><span class="header-section-number">10.1.1</span> Yeni Komut Tanımlama</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\komutadi</span>}{komutun içeriği}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Örnek:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\vekt</span>}{<span class="fu">\mathbf</span>{v}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu tanımlama ile <code>\vekt</code> yazdığınızda kalın v harfi elde edersiniz.</p>
+</section>
+<section id="parametreli-komut-tanımlama" class="level3" data-number="10.1.2">
+<h3 data-number="10.1.2" class="anchored" data-anchor-id="parametreli-komut-tanımlama"><span class="header-section-number">10.1.2</span> Parametreli Komut Tanımlama</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\komutadi</span>}[parametre sayısı]{komutun içeriği}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Örnek:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\mutlakdeger</span>}[1]{|#1|}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu tanımlama ile <code>\mutlakdeger{x}</code> yazdığınızda |x| elde edersiniz.</p>
+</section>
+</section>
+<section id="var-olan-komutu-yeniden-tanımlama" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="var-olan-komutu-yeniden-tanımlama"><span class="header-section-number">10.2</span> Var Olan Komutu Yeniden Tanımlama</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\komutadi</span>}{yeni içerik}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Örnek:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\vec</span>}[1]{<span class="fu">\boldsymbol</span>{#1}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bu tanımlama ile <code>\vec{a}</code> yazdığınızda kalın a harfi elde edersiniz.</p>
+</section>
+<section id="sık-kullanılan-komutlar" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="sık-kullanılan-komutlar"><span class="header-section-number">10.3</span> Sık Kullanılan Komutlar</h2>
+<ul>
+<li>\newcommand</li>
+<li>\renewcommand</li>
+<li>\providecommand (eğer komut tanımlı değilse tanımlar)</li>
+</ul>
+</section>
+<section id="dikkat-edilmesi-gerekenler" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="dikkat-edilmesi-gerekenler"><span class="header-section-number">10.4</span> Dikkat Edilmesi Gerekenler</h2>
+<ul>
+<li>Komut adı mutlaka <code>\</code> ile başlamalıdır.</li>
+<li>Aynı isimde bir komut varsa, <code>\renewcommand</code> kullanılmalıdır.</li>
+<li>Parametreli komutlarda <code>#1</code>, <code>#2</code> … ile parametreler kullanılır.</li>
+</ul>
+</section>
+<section id="örnek" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="örnek"><span class="header-section-number">10.5</span> Örnek</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\integral</span>}[2]{<span class="fu">\int</span>_{#1}^{#2}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Kullanımı:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\integral</span>{0}{<span class="fu">\infty</span>} f(x) dx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Daha fazla bilgi için <a href="https://en.wikibooks.org/wiki/LaTeX/Customizing_LaTeX">LaTeX Wikibook</a> sayfasına göz atabilirsiniz.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -749,14 +707,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/resim-ekleme.html" class="pagination-link" aria-label="Resim Ekleme ve Ayarları">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Resim Ekleme ve Ayarları</span></span>
+      <a href="../chapters/pgf.html" class="pagination-link" aria-label="pgfplots Kütüphanesi">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">pgfplots Kütüphanesi</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/matematik.html" class="pagination-link" aria-label="Formül ve Denklemler">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Formül ve Denklemler</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
