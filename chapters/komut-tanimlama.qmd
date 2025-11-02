@@ -1,0 +1,58 @@
+---
+title: "LaTeX'te Yeni Komut Tanımlama"
+---
+
+LaTeX'te kendi komutlarınızı tanımlayarak dokümanınızı daha verimli ve okunabilir hale getirebilirsiniz. Bunun için genellikle `\newcommand` ve `\renewcommand` komutları kullanılır.
+
+## Temel Kullanım
+
+### Yeni Komut Tanımlama
+```latex
+\newcommand{\komutadi}{komutun içeriği}
+```
+Örnek:
+```latex
+\newcommand{\vekt}{\mathbf{v}}
+```
+Bu tanımlama ile `\vekt` yazdığınızda kalın v harfi elde edersiniz.
+
+### Parametreli Komut Tanımlama
+```latex
+\newcommand{\komutadi}[parametre sayısı]{komutun içeriği}
+```
+Örnek:
+```latex
+\newcommand{\mutlakdeger}[1]{|#1|}
+```
+Bu tanımlama ile `\mutlakdeger{x}` yazdığınızda |x| elde edersiniz.
+
+## Var Olan Komutu Yeniden Tanımlama
+```latex
+\renewcommand{\komutadi}{yeni içerik}
+```
+Örnek:
+```latex
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+```
+Bu tanımlama ile `\vec{a}` yazdığınızda kalın a harfi elde edersiniz.
+
+## Sık Kullanılan Komutlar
+- \newcommand
+- \renewcommand
+- \providecommand (eğer komut tanımlı değilse tanımlar)
+
+## Dikkat Edilmesi Gerekenler
+- Komut adı mutlaka `\` ile başlamalıdır.
+- Aynı isimde bir komut varsa, `\renewcommand` kullanılmalıdır.
+- Parametreli komutlarda `#1`, `#2` ... ile parametreler kullanılır.
+
+## Örnek
+```latex
+\newcommand{\integral}[2]{\int_{#1}^{#2}}
+```
+Kullanımı:
+```latex
+\integral{0}{\infty} f(x) dx
+```
+
+Daha fazla bilgi için [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX/Customizing_LaTeX) sayfasına göz atabilirsiniz.
